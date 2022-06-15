@@ -1,0 +1,161 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+.order0 {
+  order: 0;
+}
+.order1 {
+  order: 1;
+}
+.order2 {
+  order: 2;
+}
+.order3 {
+  order: 3;
+}
+.order4 {
+  order: 4;
+}
+.order5 {
+  order: 5;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.col-1 {
+  flex: 1 0 calc(1/12 * 100%);
+  max-width: calc(1/12 * 100%);
+}
+.col-2 {
+  flex: 1 0 calc(2/12 * 100%);
+  max-width: calc(2/12 * 100%);
+}
+.col-3 {
+  flex: 1 0 calc(3/12 * 100%);
+  max-width: calc(3/12 * 100%);
+}
+.col-4 {
+  flex: 1 0 calc(4/12 * 100%);
+  max-width: calc(4/12 * 100%);
+}
+.col-5 {
+  flex: 1 0 calc(5/12 * 100%);
+  max-width: calc(5/12 * 100%);
+}
+.col-6 {
+  flex: 1 0 50%;
+  max-width: 50%;
+}
+.col-7 {
+  flex: 1 0 calc(7/12 * 100%);
+  max-width: calc(7/12 * 100%);
+}
+.col-8 {
+  flex: 1 0 calc(8/12 * 100%);
+  max-width: calc(8/12 * 100%);
+}
+.col-9 {
+  flex: 1 0 calc(9/12 * 100%);
+  max-width: calc(9/12 * 100%);
+}
+.col-10 {
+  flex: 1 0 calc(10/12 * 100%);
+  max-width: calc(10/12 * 100%);
+}
+.col-11 {
+  flex: 1 0 calc(11/12 * 100%);
+  max-width: calc(11/12 * 100%);
+}
+
+.p-relative {
+  position: relative;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.list-style-none {
+  list-style: none;
+}
+.text-bold {
+  font-weight: bold;
+}
+.text-center {
+  text-align: center;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.fill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.d-flex {
+  display: flex;
+  flex-flow: row;
+}
+.d-flex-column {
+  display: flex;
+  flex-flow: column;
+}
+.d-flex-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+.align-left {
+  margin-right: auto;
+}
+.align-right {
+  margin-left: auto;
+}
+.container {
+  max-width: 1216px;
+  margin: 0 auto;
+}
+.fluid-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 25px
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background-color: gray;
+  padding: 5px 15px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+}

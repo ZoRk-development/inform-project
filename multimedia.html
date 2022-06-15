@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/zork-base.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Главная</title>
+</head>
+<body><svg height="0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;">
+        <path id="vk-icon" clip-rule="evenodd" d="M29.5413 15.79C29.6796 15.335 29.5413 15 28.8788 15H26.6913C26.1347 15 25.878 15.2892 25.7388 15.6083C25.7388 15.6083 24.6264 18.2716 23.0506 20.0016C22.5406 20.5032 22.3089 20.6624 22.0306 20.6624C21.8914 20.6624 21.6823 20.5032 21.6823 20.0474V15.79C21.6823 15.2433 21.5289 15 21.0656 15H17.6257C17.2782 15 17.069 15.2533 17.069 15.4942C17.069 16.0116 17.8573 16.1316 17.9382 17.5883V20.7532C17.9382 21.4474 17.8107 21.5732 17.5323 21.5732C16.7907 21.5732 14.9866 18.8974 13.9158 15.8358C13.7083 15.24 13.4983 15 12.9391 15H10.75C10.125 15 10 15.2892 10 15.6083C10 16.1766 10.7417 18.9999 13.4541 22.734C15.2624 25.284 17.8082 26.6664 20.1273 26.6664C21.5181 26.6664 21.6898 26.3598 21.6898 25.8306V23.9031C21.6898 23.289 21.8214 23.1665 22.2622 23.1665C22.5872 23.1665 23.1431 23.3265 24.4414 24.5556C25.9247 26.0131 26.1688 26.6664 27.0038 26.6664H29.1913C29.8163 26.6664 30.1296 26.3598 29.9496 25.7531C29.7513 25.1498 29.0429 24.274 28.1038 23.2348C27.5938 22.6432 26.8288 22.0057 26.5963 21.6865C26.2722 21.2774 26.3647 21.0949 26.5963 20.7307C26.5963 20.7307 29.2629 17.0425 29.5404 15.79H29.5413Z" />
+        <path id="ok-icon" d="M20.337 20.3752C17.2294 20.3752 14.6466 17.7946 14.6466 14.741C14.6466 11.5817 17.2294 9 20.3381 9C23.5523 9 26.0284 11.5806 26.0284 14.741C26.0229 16.2403 25.4223 17.6762 24.3585 18.7329C23.2948 19.7896 21.855 20.3807 20.3557 20.3763L20.337 20.3752ZM20.337 12.3187C19.0213 12.3187 18.0203 13.4243 18.0203 14.7421C18.0203 16.0577 19.0213 17.0587 20.3381 17.0587C21.7076 17.0587 22.6558 16.0577 22.6558 14.7421C22.6569 13.4232 21.7076 12.3187 20.337 12.3187ZM22.603 25.0635L25.8183 28.171C26.4508 28.8541 26.4508 29.8552 25.8183 30.4877C25.1341 31.1708 24.0792 31.1708 23.5523 30.4877L20.3381 27.3273L17.2294 30.4877C16.9137 30.8034 16.4913 30.9607 16.0161 30.9607C15.6476 30.9607 15.2263 30.8023 14.8567 30.4877C14.2242 29.8552 14.2242 28.8541 14.8567 28.1699L18.1237 25.0624C16.9439 24.713 15.8121 24.2182 14.7544 23.5895C13.9635 23.1682 13.8062 22.1155 14.2275 21.3246C14.7544 20.5347 15.7026 20.3246 16.5463 20.8515C17.6888 21.5488 19.0013 21.9176 20.3397 21.9176C21.6781 21.9176 22.9906 21.5488 24.1331 20.8515C24.9768 20.3246 25.9767 20.5347 26.4508 21.3246C26.926 22.1155 26.7137 23.1671 25.9756 23.5895C24.9757 24.222 23.8163 24.6961 22.6041 25.0646L22.603 25.0635Z" />
+        <path id="telegram-icon" opacity="0.7" d="M26.8525 13.0937L11.7938 18.9007C10.7661 19.3134 10.772 19.8867 11.6052 20.1424L15.4714 21.3484L24.4166 15.7046C24.8396 15.4473 25.226 15.5857 24.9084 15.8677L17.661 22.4084H17.6593L17.661 22.4093L17.3943 26.3943C17.785 26.3943 17.9574 26.2151 18.1766 26.0037L20.0544 24.1776L23.9605 27.0628C24.6808 27.4594 25.198 27.2556 25.3772 26.396L27.9414 14.3117C28.2038 13.2594 27.5396 12.7829 26.8525 13.0937Z" />
+        <path id="whatsapp-icon" d="M25.342 22.3165C25.0496 22.1685 23.6256 21.4736 23.3594 21.3744C23.0933 21.2796 22.9001 21.23 22.7061 21.5224C22.5165 21.8075 21.958 22.4601 21.7873 22.6504C21.6167 22.8408 21.449 22.8553 21.161 22.7263C20.8686 22.5783 19.9345 22.2742 18.8255 21.2796C17.9592 20.5089 17.3824 19.5595 17.2111 19.2671C17.0405 18.9784 17.1921 18.815 17.3365 18.6706C17.4692 18.5379 17.6289 18.3367 17.7769 18.1617C17.9177 17.9867 17.9629 17.8693 18.0657 17.6797C18.1605 17.4748 18.1116 17.3151 18.0394 17.1708C17.9672 17.0264 17.3861 15.595 17.1433 15.0248C16.9114 14.459 16.6686 14.5312 16.4899 14.5312C16.323 14.5159 16.129 14.5159 15.9358 14.5159C15.7426 14.5159 15.4268 14.588 15.1607 14.8651C14.8945 15.1575 14.1428 15.8561 14.1428 17.2692C14.1428 18.686 15.1833 20.0568 15.3277 20.2617C15.4757 20.4513 17.3744 23.3679 20.2874 24.6214C20.9823 24.9138 21.5219 25.0888 21.9434 25.2332C22.6383 25.4534 23.2727 25.4227 23.7736 25.3505C24.3278 25.2594 25.4901 24.6476 25.7336 23.9644C25.9808 23.2768 25.9808 22.7073 25.9086 22.5783C25.8364 22.4455 25.6468 22.3734 25.3544 22.2443L25.342 22.3165ZM20.0592 29.4791H20.0439C18.3194 29.4791 16.6146 29.0117 15.1257 28.1381L14.7764 27.9296L11.1306 28.879L12.1106 25.3316L11.8751 24.967C10.9122 23.436 10.4013 21.6642 10.4014 19.8555C10.4014 14.5618 14.7348 10.2437 20.0665 10.2437C22.6492 10.2437 25.0722 11.2499 26.8952 13.0728C27.7944 13.9614 28.5077 15.0201 28.9935 16.1873C29.4792 17.3545 29.7277 18.6067 29.7243 19.8709C29.717 25.161 25.3872 29.4791 20.0629 29.4791H20.0592ZM28.2813 11.6867C26.0632 9.5444 23.1465 8.33325 20.0439 8.33325C13.6447 8.33325 8.43411 13.5213 8.43047 19.8971C8.43047 21.9329 8.96203 23.9192 9.97995 25.6772L8.33203 31.6666L14.492 30.0602C16.1985 30.9803 18.106 31.4642 20.0446 31.469H20.0483C26.4511 31.469 31.6617 26.281 31.6654 19.9008C31.6654 16.8135 30.4615 13.9077 28.2667 11.7239L28.2813 11.6867Z" />
+    </svg>
+    <header class="header">
+        <div class="container d-flex header__container adaptive-padding"><a class="logo"></a>
+            <div class="header__nav-list-container">
+                <div class="link-list header__link-list" id="mobile-menu">
+                    <div class="nav__expandable expandable accordeon-item__hover-icon"><a class="link-list__link nav-list__link" href="#">Первоисточники</a>
+                        <div class="nav__expandable__heading expandable__heading">Первоисточники<div class="accordeon-item__icon"></div>
+                        </div>
+                        <div class="nav__expandable__content expandable__content">
+                            <ul class="link-list nav__link-list">
+                                <li><a class="link-list__link nav-sublist__link" href="#">Исследования</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Справочная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Нормативная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Дневники и письма</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Биографии</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav__link-spacer"></div>
+                    <div class="nav__expandable expandable accordeon-item__hover-icon"><a class="link-list__link nav-list__link" href="#">Мемуары</a>
+                        <div class="nav__expandable__heading expandable__heading">Мемуары<div class="accordeon-item__icon"></div>
+                        </div>
+                        <div class="nav__expandable__content expandable__content">
+                            <ul class="link-list nav__link-list">
+                                <li><a class="link-list__link nav-sublist__link" href="#">Исследования</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Справочная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Нормативная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Дневники и письма</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Биографии</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav__link-spacer"></div>
+                    <div class="nav__expandable expandable accordeon-item__hover-icon"><a class="link-list__link nav-list__link" href="#">Общая история</a>
+                        <div class="nav__expandable__heading expandable__heading">Общая история<div class="accordeon-item__icon"></div>
+                        </div>
+                        <div class="nav__expandable__content expandable__content">
+                            <ul class="link-list nav__link-list">
+                                <li><a class="link-list__link nav-sublist__link" href="#">Исследования</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Справочная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Нормативная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Дневники и письма</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Биографии</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav__link-spacer"></div>
+                    <div class="nav__expandable expandable accordeon-item__hover-icon"><a class="link-list__link nav-list__link" href="#">Литературоведение</a>
+                        <div class="nav__expandable__heading expandable__heading">Литературоведение<div class="accordeon-item__icon"></div>
+                        </div>
+                        <div class="nav__expandable__content expandable__content">
+                            <ul class="link-list nav__link-list">
+                                <li><a class="link-list__link nav-sublist__link" href="#">Исследования</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Справочная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Нормативная литература</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Дневники и письма</a></li>
+                                <li><a class="link-list__link nav-sublist__link" href="#">Биографии</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mobile-items-wrapper"><a class="arrow-link mobile-menu__become_author" href="#">Стать Автором<img class="arrow_icon" src="images/icons/default-arrow.svg" /></a>
+                        <div class="header__contacts">
+                            <div class="header__contacts__info-block contacts__info-block">
+                                <div class="header__contacts__phone contacts__phone">+7 123 123 12 12</div>
+                                <div class="header__contacts__address contacts__address">Садовая ул., 7, Санкт-Петербург, 196601</div>
+                            </div>
+                            <div class="header__contacts__links-wrapper contacts__links-wrapper"><a class="mobile__social-link social-link social-link__vk" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                                        <use xlink:href="#vk-icon"></use>
+                                    </svg></a><a class="mobile__social-link social-link social-link__ok" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                                        <use xlink:href="#ok-icon"></use>
+                                    </svg></a><a class="mobile__social-link social-link social-link__telegram" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                                        <use xlink:href="#telegram-icon"></use>
+                                    </svg></a><a class="mobile__social-link social-link social-link__whatsapp" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                                        <use xlink:href="#whatsapp-icon"></use>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div><a class="arrow-link header__become_author" href="#">Стать Автором<img class="arrow_icon" src="images/icons/default-arrow.svg" /></a>
+            <div class="mobile-btn" id="mobile-btn"><img class="mobile-btn__icon icon__open" src="images/icons/phone-menu.svg" /><img class="mobile-btn__icon icon__close" src="images/icons/phone-close.svg" /></div>
+        </div>
+    </header>
+    <div class="breadcrumb-nav multimedia__breadcrumbs">
+        <div class="container adaptive-padding">
+            <ol class="breadcrumb__list">
+                <li><a class="breadcrumb__item" href="index.html">Главная</a></li>
+                <li class="breadcrumb__separator">/</li>
+                <li class="breadcrumb__item active">Новости</li>
+                <li class="breadcrumb__separator">/</li>
+                <li class="breadcrumb__item active">Мультимедиа</li>
+            </ol>
+            <div class="breadcrumb__title">Мультимедиа</div>
+        </div>
+    </div>
+    <div class="multimedia-top-block">
+        <div class="site-block__container container adaptive-padding">
+            <div class="multimedia-items-grid">
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media1.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">«Пятёрочка» протестирует создание в своих магазинах «Центров местного сообщества» </div>
+                    <div class="multimedia-item__date">26 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media2.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Памяти настоящего коммуниста Николая Михайловича Беляева</div>
+                    <div class="multimedia-item__date">22 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media3.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">22 июня 1940 г. было подписано перемирие с Францией</div>
+                    <div class="multimedia-item__date">15 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media4.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Битва за Англию</div>
+                    <div class="multimedia-item__date">10 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media1.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Ирина Иванова: Наш город - прежде всего, наследник великого прошлого!</div>
+                    <div class="multimedia-item__date">6 апреля 2022</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="best-videos-block dark-block">
+        <div class="site-block__container">
+            <div class="best-videos-block__heading site-block__heading dark-block__heading">Лучшие видео материалы</div>
+            <div class="videos-slider__wrapper slider-wrapper">
+                <div class="videos-slider__nav" id="videos-slider__nav">
+                    <div class="videos-slider__nav__prev slider__nav__prev nav__prev-button nav__btn"><img class="nav__btn__img nav__btn__img-rotate" src="images/icons/arrow_hover.svg" /></div>
+                    <div class="videos-slider__nav__next slider__nav__next nav__next-button nav__btn"><img class="nav__btn__img" src="images/icons/arrow_hover.svg" /></div>
+                </div>
+                <div class="videos-slider" id="videos-slider">
+                    <div class="videos-item__wrapper"><a class="videos-item" href="#">
+                            <div class="videos-item__image-wrapper"><img class="videos-item__image" src="images/media1.png" /></div>
+                            <div class="videos-item__content">
+                                <div class="videos-item__heading">Выставка «Скульптура Флоренции в ХV веке»</div>
+                                <div class="videos-item__desc-wrapper">
+                                    <div class="videos-item__desc">Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту</div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="videos-item__wrapper"><a class="videos-item" href="#">
+                            <div class="videos-item__image-wrapper"><img class="videos-item__image" src="images/media2.png" /></div>
+                            <div class="videos-item__content">
+                                <div class="videos-item__heading">День рождения Владимира Ленина</div>
+                                <div class="videos-item__desc-wrapper">
+                                    <div class="videos-item__desc">Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту</div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="videos-item__wrapper"><a class="videos-item" href="#">
+                            <div class="videos-item__image-wrapper"><img class="videos-item__image" src="images/media1.png" /></div>
+                            <div class="videos-item__content">
+                                <div class="videos-item__heading">Выставка «Скульптура Флоренции в ХV веке»</div>
+                                <div class="videos-item__desc-wrapper">
+                                    <div class="videos-item__desc">Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту</div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="videos-item__wrapper"><a class="videos-item" href="#">
+                            <div class="videos-item__image-wrapper"><img class="videos-item__image" src="images/media2.png" /></div>
+                            <div class="videos-item__content">
+                                <div class="videos-item__heading">День рождения Владимира Ленина</div>
+                                <div class="videos-item__desc-wrapper">
+                                    <div class="videos-item__desc">Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту</div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="videos-item__wrapper"><a class="videos-item" href="#">
+                            <div class="videos-item__image-wrapper"><img class="videos-item__image" src="images/media1.png" /></div>
+                            <div class="videos-item__content">
+                                <div class="videos-item__heading">Выставка «Скульптура Флоренции в ХV веке»</div>
+                                <div class="videos-item__desc-wrapper">
+                                    <div class="videos-item__desc">Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту</div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="videos-item__wrapper"><a class="videos-item" href="#">
+                            <div class="videos-item__image-wrapper"><img class="videos-item__image" src="images/media2.png" /></div>
+                            <div class="videos-item__content">
+                                <div class="videos-item__heading">День рождения Владимира Ленина</div>
+                                <div class="videos-item__desc-wrapper">
+                                    <div class="videos-item__desc">Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту</div>
+                                </div>
+                            </div>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rest-multimedia-block">
+        <div class="site-block__container container adaptive-padding">
+            <div class="rest-multimedia-block__multimedia-items multimedia-items-grid">
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media2.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Геннадий Денисов: Власть переписывает закон под каждые выборы, но каждый раз он массово нарушается!</div>
+                    <div class="multimedia-item__date">2 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media3.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Ольга Ходунова: Сделайте свой выбор во имя будущего ваших детей!</div>
+                    <div class="multimedia-item__date">26 марта 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media4.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Роман Кононенко: Власть должна проявить политическую волю и не дать задушить местных производителей!</div>
+                    <div class="multimedia-item__date">26 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media1.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Фракция КПРФ единогласно не поддержала корректировку бюджета города</div>
+                    <div class="multimedia-item__date">22 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media2.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">«Пятёрочка» протестирует создание в своих магазинах «Центров местного сообщества» </div>
+                    <div class="multimedia-item__date">26 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media3.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Горожане поддерживают инициативу о возвращении городу имени Ленина</div>
+                    <div class="multimedia-item__date">21 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media4.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Власть двадцать лет разрушала советскую систему подготовки кадров, а сейчас пытается о ней вспоминать</div>
+                    <div class="multimedia-item__date">15 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media1.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Памяти И.В. Сталина. Песня русского барда Александра Харчикова в исполнении ленинградской пионерки</div>
+                    <div class="multimedia-item__date">10 апреля 2022</div>
+                </div>
+                <div class="multimedia-item"><a href="#"><img class="multimedia-item__image" src="images/media2.jpg" /><img class="multimedia-item__image-play" src="images/icons/icon-play.svg" /></a>
+                    <div class="multimedia-item__heading">Советский народ в тяжелейшую годину испытаний проявил максимальные мужество и героизм</div>
+                    <div class="multimedia-item__date">6 апреля 2022</div>
+                </div>
+            </div>
+            <div class="pagination">
+                <div class="pagination-arrow inactive"><img class="mirror-icon" src="images/icons/default-arrow.svg" />Предыдущая</div>
+                <div class="pagination__pages">
+                    <div class="btn pagination-btn mobile__pagination-btn inactive"><img class="mirror-icon" src="images/icons/default-arrow.svg" /></div>
+                    <div class="btn pagination-btn pagination-btn-active">1</div><a class="btn pagination-btn" href="#">2</a><a class="btn pagination-btn" href="#">3</a><a class="btn pagination-btn" href="#">4</a><a class="btn pagination-btn" href="#">...</a><a class="btn pagination-btn" href="#">11</a><a class="btn pagination-btn mobile__pagination-btn" href="#"><img src="images/icons/default-arrow.svg" /></a>
+                </div><a class="pagination-arrow" href="#">Следующая<img src="images/icons/default-arrow.svg" /></a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__logo-container container adaptive-padding"><a class="footer__logo logo"></a>
+            <div class="btn footer__btn" onclick="smoothScrollTop();">Вернуться в начало<img src="images/icons/caret-down.svg" /></div>
+            <div class="btn footer__btn footer__btn-small" onclick="smoothScrollTop();">В начало<img src="images/icons/caret-down.svg" /></div>
+        </div>
+        <div class="footer__links container adaptive-padding">
+            <div class="heading-list expandable footer__accordeon-item__hover-icon accordeon-item__hover-icon">
+                <div class="heading-list__header expandable__heading">Первоисточники<div class="footer__accordeon-item__icon accordeon-item__icon"></div>
+                </div>
+                <div class="expandable__content footer__expandable__content">
+                    <ul class="link-list footer__link-list footer__expandable__wrapper">
+                        <li><a class="link-list__link footer__links__link" href="#">Театральная афиша</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Пушкинская карта</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Классическая драма</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Современная драма</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Балет и современный танец</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Детский театр</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Мюзиклы и оперетты</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Экспериментальный театр</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="heading-list expandable footer__accordeon-item__hover-icon accordeon-item__hover-icon">
+                <div class="heading-list__header expandable__heading">Мемуары<div class="footer__accordeon-item__icon accordeon-item__icon"></div>
+                </div>
+                <div class="expandable__content footer__expandable__content">
+                    <ul class="link-list footer__link-list footer__expandable__wrapper">
+                        <li><a class="link-list__link footer__links__link" href="#">Театральная афиша</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Пушкинская карта</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Классическая драма</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Современная драма</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Балет и современный танец</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Детский театр</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Мюзиклы и оперетты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="heading-list expandable footer__accordeon-item__hover-icon accordeon-item__hover-icon">
+                <div class="heading-list__header expandable__heading">Общая история<div class="footer__accordeon-item__icon accordeon-item__icon"></div>
+                </div>
+                <div class="expandable__content footer__expandable__content">
+                    <ul class="link-list footer__link-list footer__expandable__wrapper">
+                        <li><a class="link-list__link footer__links__link" href="#">Театральная афиша</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Пушкинская карта</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Классическая драма</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Современная драма</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Балет и современный танец</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="heading-list expandable footer__accordeon-item__hover-icon accordeon-item__hover-icon">
+                <div class="heading-list__header expandable__heading">Литературоведение<div class="footer__accordeon-item__icon accordeon-item__icon"></div>
+                </div>
+                <div class="expandable__content footer__expandable__content">
+                    <ul class="link-list footer__link-list footer__expandable__wrapper">
+                        <li><a class="link-list__link footer__links__link" href="#">Театральная афиша</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Пушкинская карта</a></li>
+                        <li><a class="link-list__link footer__links__link" href="#">Классическая драма</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__contacts container adaptive-padding">
+            <div class="contacts__links-wrapper"><a class="social-link social-link__vk footer__social-link" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                        <use xlink:href="#vk-icon"></use>
+                    </svg></a><a class="social-link social-link__ok footer__social-link" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                        <use xlink:href="#ok-icon"></use>
+                    </svg></a><a class="social-link social-link__telegram footer__social-link" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                        <use xlink:href="#telegram-icon"></use>
+                    </svg></a><a class="social-link social-link__whatsapp footer__social-link" href="#"><svg width="40" height="40" viewBox="0 0 40 40">
+                        <use xlink:href="#whatsapp-icon"></use>
+                    </svg></a></div>
+            <div class="footer__contacts__info-block contacts__info-block">
+                <div class="contacts__phone">+7 123 123 12 12</div>
+                <div class="contacts__address">Садовая ул., 7, Санкт-Петербург, 196601</div>
+            </div>
+        </div>
+        <div class="footer__politics container adaptive-padding">Политика конфиденциальности</div>
+    </footer>
+</body>
+<script src="js/tiny-slider.min.js"></script>
+<script src="js/main.js"></script>
+</html>
