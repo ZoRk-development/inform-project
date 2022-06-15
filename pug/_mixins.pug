@@ -1,0 +1,220 @@
+//- main: index.pug, pretty:true
+
+mixin responsive-block(name, classes="")
+  div(class=name)
+    .container(class=classes)
+      block
+
+mixin responsive-flex-block(name, classes="")
+  div(class=name)
+    .container.d-flex(class=classes)
+      block
+
+mixin fluid-flex-block(name, classes="")
+  div(class=name)
+    .fluid-container.d-flex(class=classes)
+      block
+
+mixin responsive-grid-3-block(name, classes="")
+  div(class=name)
+    .container.grid-3(class=classes)
+      block
+
+mixin responsive-header-block(name, header, header_classes="", container_classes="")
+  +responsive-block(name, container_classes)
+    h1.text-center(class=header_classes)=header
+    block
+
+mixin responsive-header-flex-block(name, header, header_classes="", block_classes="", container_classes="")
+  +responsive-block(name, container_classes)
+    h1.text-center(class=header_classes)=header
+    .d-flex(class=block_classes)
+      block
+
+mixin responsive-header-grid-3-block(name, header, header_classes="", block_classes="", container_classes="")
+  +responsive-block(name, container_classes)
+    h1.text-center(class=header_classes)=header
+    .grid-3(class=block_classes)
+      block
+
+mixin li-a(href, classes="")
+  li
+    a(href=href class=classes)
+      block
+
+mixin form-progress(text1, text2, text3)
+  .form-progress
+    .form-progress__circle
+      .form-progress__label-wrapper
+        .form-progress__label=text1
+    .form-progress__connection
+    .form-progress__circle
+      .form-progress__label-wrapper
+        .form-progress__label=text2
+    .form-progress__connection
+    .form-progress__circle
+      .form-progress__label-wrapper
+        .form-progress__label=text3  
+      
+mixin uncharted-block()
+  .uncharted-block
+    form.site-block__container.container.adaptive-padding
+      .site-block__heading Анчартед: На картах не<br> значится
+      .uncharted-block__subheading.site-block__subheading 6 свежих стендап-спешелов, осмысляющих наболевшие и актуальные проблемы
+      +form-progress("Выбери тип", "Оставь контактные данные", "Будь в курсе событий")
+      .form__label.form__subscription-type-label Выберите тип подписки
+        img(src="images/icons/info-icon.svg")
+      .form__subscription-type-wrapper
+        .form__subscription-type#form__subscription-type
+          label.form__subscription_card-wrapper
+            input(type="radio" name="subscription-type" value="1" required).form__subscription_card__radio
+            .form__subscription_card
+              .card__icon
+                img(src="images/icons/akar-icons_calendar.svg")
+              .card__heading Первый тип
+              .card__content Вспоминаем феномен фильма про братишку
+              img(src="images/icons/check_bold.svg").card__check_mark
+          label.form__subscription_card-wrapper    
+            input(type="radio" name="subscription-type" value="2" required).form__subscription_card__radio
+            .form__subscription_card
+              .card__icon
+                img(src="images/icons/fluent_news.svg")
+              .card__heading Второй тип
+              .card__content Вспоминаем феномен фильма про братишку
+              img(src="images/icons/check_bold.svg").card__check_mark
+          label.form__subscription_card-wrapper
+            input(type="radio" name="subscription-type" value="3" required).form__subscription_card__radio
+            .form__subscription_card
+              .card__icon
+                img(src="images/icons/akar-icons_alarm.svg")
+              .card__heading Третий тип
+              .card__content Вспоминаем феномен фильма про братишку
+              img(src="images/icons/check_bold.svg").card__check_mark
+          label.form__subscription_card-wrapper
+            input(type="radio" name="subscription-type" value="4" required).form__subscription_card__radio
+            .form__subscription_card
+              .card__icon
+                img(src="images/icons/akar-icons_people-multiple.svg")
+              .card__heading Четвёртый тип
+              .card__content Вспоминаем феномен фильма про братишку
+              img(src="images/icons/check_bold.svg").card__check_mark
+      .form__label.form__required-label Оставьте свои контактные данные
+        span.form__required-msg
+          | Поля отмеченные
+          | <img src="images/icons/exclamation.svg" class="required-msg__icon"></img>
+          | обязательны для заполнения
+      .form__input-fields
+        .form__input-container
+          input(name="name" placeholder="Имя" required).form__input
+          .input__label-wrapper
+            .input__label Имя
+          img(src="images/icons/exclamation.svg").input__required-icon
+        .form__input-container
+          input(name="surname" placeholder="Фамилия" required).form__input
+          .input__label-wrapper
+            .input__label Фамилия
+          img(src="images/icons/exclamation.svg").input__required-icon
+        .form__input-container
+          input(name="email" placeholder="Эл. почта" required).form__input
+          .input__label-wrapper
+            .input__label Эл. почта
+          img(src="images/icons/exclamation.svg").input__required-icon
+      .form__footer
+        .form__personal_agreement
+          input(type="checkbox" name="agreement" required).checkbox#agreement
+          label(for="agreement") Даю согласие на обработку&nbsp<a href="#" class="form__personal_agreement__link">персональных данных</a>
+        button(type="submit").btn Отправить Заявку
+        
+mixin news-item(img, date, heading, desc)
+  .news-item__wrapper
+    a(href="#").news-item
+      img(src=img).news-item__image
+      .news-item__date=date
+      .news-item__heading=heading
+      .news-item__desc=desc
+
+mixin news-block()
+  .news-block
+    .news-block__container.site-block__container.container.adaptive-padding
+      .site-block__heading Последние новости
+      a(href="#").news-block__arrow-link.site-block__arrow-link.arrow-link Читать все новости
+        img(src="images/icons/default-arrow.svg").arrow_icon
+      .news__slider-wrapper.slider-wrapper
+        .news-slider__nav#news-slider__nav
+          .news-slider__nav__prev.slider__nav__prev.nav__prev-button.nav__btn
+            img(src="images/icons/arrow_hover.svg").nav__btn__img.nav__btn__img-rotate
+          .news-slider__nav__next.slider__nav__next.nav__next-button.nav__btn
+            img(src="images/icons/arrow_hover.svg").nav__btn__img
+        .news-items#news-slider
+          +news-item("images/image7.png", "26 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image6.png", "22 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image6.png", "21 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image5.png", "15 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image4.png", "10 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image3.png", "6 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image2.png", "2 апреля 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+          +news-item("images/image1.png", "26 марта 2022", "Проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе»", "Первый заместитель председателя Комитета Совета Федерации по экономической политике Сергей Калашников подготовил проект закона «О внесении изменения в статью 21 Федерального закона «О рекламе».")
+
+          
+mixin videos-slide(img, heading, desc)
+  .videos-item__wrapper
+    a(href="#").videos-item
+      .videos-item__image-wrapper
+        img(src=img).videos-item__image
+      .videos-item__content
+        .videos-item__heading=heading
+        .videos-item__desc-wrapper
+          .videos-item__desc=desc
+
+mixin pagination()
+  .pagination
+    .pagination-arrow.inactive
+      img(src="images/icons/default-arrow.svg").mirror-icon
+      | Предыдущая
+    .pagination__pages
+      .btn.pagination-btn.mobile__pagination-btn.inactive
+        img(src="images/icons/default-arrow.svg").mirror-icon
+      .btn.pagination-btn.pagination-btn-active 1
+      a(href="#").btn.pagination-btn 2
+      a(href="#").btn.pagination-btn 3
+      a(href="#").btn.pagination-btn 4
+      a(href="#").btn.pagination-btn ...
+      a(href="#").btn.pagination-btn 11
+      a(href="#").btn.pagination-btn.mobile__pagination-btn
+        img(src="images/icons/default-arrow.svg")
+    a(href="#").pagination-arrow
+      | Следующая
+      img(src="images/icons/default-arrow.svg")
+
+mixin date-filter()
+  form.date-filter
+    .date-filter__dropdowns-wrapper
+      .date-filter__dropdown.dropdown
+        input(type="hidden" name="Year" value="-1").dropdown-input
+        button(type="button" data-select="toggle" data-index="-1").dropdown-toggle Год
+        ul.dropdown-list
+          li(data-index="2022" data-value="2022").dropdown-item 2022
+          li(data-index="2021" data-value="2021").dropdown-item 2021
+          li(data-index="2020" data-value="2020").dropdown-item 2020
+          li(data-index="2019" data-value="2019").dropdown-item 2019
+          li(data-index="2018" data-value="2018").dropdown-item 2018
+          li(data-index="2017" data-value="2017").dropdown-item 2017
+          li(data-index="2016" data-value="2016").dropdown-item 2016
+      .date-filter__dropdown.dropdown
+        input(type="hidden" name="Month" value="-1").dropdown-input
+        button(type="button" data-select="toggle" data-index="-1").dropdown-toggle Месяц
+        ul.dropdown-list
+          li(data-index="0" data-value="0").dropdown-item Январь
+          li(data-index="1" data-value="1").dropdown-item Февраль
+          li(data-index="2" data-value="2").dropdown-item Март
+          li(data-index="3" data-value="3").dropdown-item Апрель
+          li(data-index="4" data-value="4").dropdown-item Май
+          li(data-index="5" data-value="5").dropdown-item Июнь
+          li(data-index="6" data-value="6").dropdown-item Июль
+          li(data-index="7" data-value="7").dropdown-item Август
+          li(data-index="8" data-value="8").dropdown-item Сентябрь
+          li(data-index="9" data-value="9").dropdown-item Октябрь
+          li(data-index="10" data-value="10").dropdown-item Ноябрь
+          li(data-index="11" data-value="11").dropdown-item Декабрь
+    button(type="submit").btn.events-block__btn Применить
+    a(href="#").date-filter__clear-btn Очистить всё

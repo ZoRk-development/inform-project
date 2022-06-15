@@ -1,0 +1,41 @@
+//- out: ../multimedia_next.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("multimedia__breadcrumbs", "", "Мультимедиа", "", ["index.html", "Главная"], ["Новости"], ["Мультимедиа"])
+    
+mixin multimedia-item(img, date, heading)
+  .multimedia-item
+    a(href="#")
+      img(src=img).multimedia-item__image
+      img(src="images/icons/icon-play.svg").multimedia-item__image-play
+    .multimedia-item__heading=heading
+    .multimedia-item__date=date
+
+mixin rest-multimedia-block()
+  .rest-multimedia-block
+    .site-block__container.container.adaptive-padding
+      .rest-multimedia-block__multimedia-items.multimedia-items-grid
+        +multimedia-item("images/media2.jpg", "2 апреля 2022", "Геннадий Денисов: Власть переписывает закон под каждые выборы, но каждый раз он массово нарушается!")
+        +multimedia-item("images/media3.jpg", "26 марта 2022", "Ольга Ходунова: Сделайте свой выбор во имя будущего ваших детей!")
+        +multimedia-item("images/media4.jpg", "26 апреля 2022", "Роман Кононенко: Власть должна проявить политическую волю и не дать задушить местных производителей!")
+        +multimedia-item("images/media1.jpg", "22 апреля 2022", "Фракция КПРФ единогласно не поддержала корректировку бюджета города")
+        +multimedia-item("images/media2.jpg", "26 апреля 2022", "«Пятёрочка» протестирует создание в своих магазинах «Центров местного сообщества» ")
+        +multimedia-item("images/media3.jpg", "21 апреля 2022", "Горожане поддерживают инициативу о возвращении городу имени Ленина")
+        +multimedia-item("images/media4.jpg", "15 апреля 2022", "Власть двадцать лет разрушала советскую систему подготовки кадров, а сейчас пытается о ней вспоминать")
+        +multimedia-item("images/media1.jpg", "10 апреля 2022", "Памяти И.В. Сталина. Песня русского барда Александра Харчикова в исполнении ленинградской пионерки")
+        +multimedia-item("images/media2.jpg", "6 апреля 2022", "Советский народ в тяжелейшую годину испытаний проявил максимальные мужество и героизм")
+        +multimedia-item("images/media2.jpg", "2 апреля 2022", "Геннадий Денисов: Власть переписывает закон под каждые выборы, но каждый раз он массово нарушается!")
+        +multimedia-item("images/media3.jpg", "26 марта 2022", "Ольга Ходунова: Сделайте свой выбор во имя будущего ваших детей!")
+        +multimedia-item("images/media4.jpg", "26 апреля 2022", "Роман Кононенко: Власть должна проявить политическую волю и не дать задушить местных производителей!")
+        +multimedia-item("images/media1.jpg", "22 апреля 2022", "Фракция КПРФ единогласно не поддержала корректировку бюджета города")
+        +multimedia-item("images/media2.jpg", "26 апреля 2022", "«Пятёрочка» протестирует создание в своих магазинах «Центров местного сообщества» ")
+        +multimedia-item("images/media3.jpg", "21 апреля 2022", "Горожане поддерживают инициативу о возвращении городу имени Ленина")
+       
+      +pagination()
+
+block content
+  +page-header
+  +rest-multimedia-block

@@ -1,0 +1,193 @@
+.school__breadcrumbs
+  padding-top: 96px
+  padding-bottom: 112px
+  @media screen and (max-width: $md)
+    padding-top: 64px
+    padding-bottom: 80px
+  @media screen and (max-width: $sm)
+    padding-top: 48px
+    padding-bottom: 56px
+
+.school-intro-block
+  text-align: center
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 20px
+  line-height: 142%
+  color: $gray-8
+  max-width: 800px
+  margin: 0 auto
+  margin-bottom: 112px
+  @media screen and (max-width: $md)
+    margin-bottom: 80px
+  @media screen and (max-width: $sm)
+    margin-bottom: 56px
+
+.intro_block__p:not(:last-child)
+  padding-bottom: 16px
+
+.school-block
+  padding-top: 80px
+  padding-bottom: 112px
+  @media screen and (max-width: $md)
+    padding-top: 56px
+    padding-bottom: 80px
+  @media screen and (max-width: $sm)
+    padding-bottom: 64px
+
+.literatury-block
+  padding-top: 112px
+  margin-bottom: 160px
+  @media screen and (max-width: $md)
+    padding-top: 80px
+    margin-bottom: 80px
+  @media screen and (max-width: $sm)
+    padding-top: 56px
+    margin-bottom: 96px
+
+.literatury-block__download-cards
+  border: none
+  margin: 0
+  padding: 0
+
+.literatury-block__heading
+  margin-bottom: 64px
+
+.literatury-block__author
+  color: $gray-7
+  font-weight: 400
+  font-size: 1.6rem
+  line-height: 103%
+  margin-bottom: 16px
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 115%
+    margin-bottom: 12px
+
+.literatury-block__image-wrapper
+  margin-bottom: 16px
+
+.video-card-item__wrapper
+  width: $video-card-item-width
+  @media screen and (max-width: $sm)
+    width: $video-card-item-width-sm
+
+.video-card-item
+  position: relative
+  min-height: 288px
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  text-decoration: none
+  @media screen and (max-width: $md)
+    padding: 0 calc(min(100% - 100vw + 70px, 70px))
+  @media screen and (max-width: $sm)
+    padding: 0 calc(min(100% - 100vw + 20px, 20px))
+
+.video-card-item__footer
+  display: flex
+  gap: 32px
+  @media screen and (max-width: $sm)
+    gap: 16px
+    flex-flow: column
+
+.video-card-item__count
+  color: $gray-9
+  font-family: $serif-font
+  font-weight: 700
+  font-size: 2rem
+  line-height: 120%
+  flex: 0 0 auto
+
+.video-card-item__total
+  color: $text-300
+  font-size: 1.6rem
+  line-height: 150%
+
+.video-card-item__heading
+  color: $gray-9
+  font-family: $serif-font
+  font-weight: 700
+  font-size: 2.2rem
+  line-height: 105%
+  margin-bottom: 16px
+  @media screen and (max-width: $sm)
+    margin-bottom: 8px
+
+.video-card-item__desc
+  color: $text-500
+  font-weight: 400
+  font-size: 1.6rem
+  line-height: 150%
+
+.dark-block__video-card-item__count
+  color: white
+
+.dark-block__video-card-item__heading
+  color: white
+
+.dark-block__video-card-item__desc
+  color: $text-300
+
+.video-card-item__image-wrapper
+  position: relative
+  overflow: hidden
+  margin-bottom: 24px
+  width: 100%
+  height: 364px
+  @media screen and (max-width: $sm)
+    height: 248px
+  &:before
+    position: absolute
+    content: ""
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(62deg, rgba(21, 21, 21, 0.9) 0%, rgba(20, 21, 35, 0) 100%)
+    z-index: 1
+  &:after
+    z-index: 2
+
+.video-card-item__image
+  width: 100%
+  height: auto
+  display: block
+  height: 100%
+  object-fit: cover
+
+.video-card-item__wrapper__empty
+  color: $gray-1
+
+.slider-wrapper .video-card-item__wrapper__empty.tns-item
+  display: inline-block
+  opacity: 0
+  transition: visibility, opacity 0.3s, 0.3s
+  min-width: 16px
+  height: 16px
+  line-height: 30%
+  padding: 0!important
+  font-size: 36rem!important
+
+.dark-block__video-card-item__wrapper__empty
+  color: $gray-8
+
+.video-card-item__wrapper__empty.vl-slide-center.tns-item
+  min-width: 16px
+  opacity: 1
+  transition: visibility, opacity 3s, 3s
+
+.school-videos-slider__wrapper
+  --slider-btn-prev-padding: 725px
+  --slider-btn-next-padding: 725px
+
+.school-videos-slider__nav__prev, .school-videos-slider__nav__next
+  top: 40%
+  @media screen and (max-width: $sm)
+    display: none
+
+@media screen and (min-width: $md)
+  .school-videos-slider__nav__prev
+    margin-left: calc((100vw - var(--slider-btn-prev-padding)) / 2)
+  .school-videos-slider__nav__next
+    margin-right: calc((100vw - var(--slider-btn-next-padding)) / 2)

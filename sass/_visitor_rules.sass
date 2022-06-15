@@ -1,0 +1,197 @@
+.visitor-rules__breadcrumbs
+  padding-top: 64px
+  padding-bottom: 48px
+
+.vistor-rules-block
+  margin-bottom: 112px
+  display: flex
+  gap: 136px
+  @media screen and (max-width: $xxl)
+    gap: 40px
+  @media screen and (max-width: $md)
+    flex-flow: column
+    gap: 0
+    padding: 0
+    max-width: none
+
+.vistor-rules-block__content
+  flex: 1 1 auto
+
+.aside-block
+  max-width: 280px
+  @media screen and (min-width: $md)
+    padding: 0
+  @media screen and (max-width: $md)
+    max-width: none
+    border-top: 1px solid $border-color
+    border-bottom: 1px solid $border-color
+    margin-bottom: 40px
+
+.aside-block__expandable__content
+  @media screen and (min-width: $md)
+    max-height: none
+
+.aside-block__heading
+  color: $gray-9
+  font-weight: 700
+  font-size: 14px
+  line-height: 115%
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  margin-bottom: 20px
+  display: flex
+  align-items: center
+  @media screen and (max-width: $md)
+    margin-bottom: 12px
+    margin-top: 12px
+  @media screen and (min-width: $md)
+    cursor: unset
+
+.aside-block__accordeon-icon
+  display: none
+  @media screen and (max-width: $md)
+    display: block
+
+.aside-block__list
+  margin: 8px 0 32px 0
+  padding: 0
+  list-style: none
+  display: flex
+  flex-flow: column
+  gap: 16px
+  @media screen and (min-width: $md)
+    max-height: none
+
+.aside-block__item
+  font-weight: 400
+  font-size: 14px
+  line-height: 115%
+  color: $gray-5
+  text-decoration: none
+  &.active
+    color: $gray-9
+
+.content__intro
+  margin-bottom: 48px
+  color: $gray-8
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 20px
+  line-height: 142%
+  @media screen and (min-width: $md)
+    padding: 0
+
+.content__p
+  margin-bottom: 32px
+
+.content__our-values
+  background-color: $red-0
+  padding: 48px 72px 64px
+  margin-bottom: 64px
+  @media screen and (max-width: $sm)
+    padding-left: 20px
+    padding-right: 20px
+
+.our-values__heading
+  color: $gray-9
+  font-weight: 700
+  font-size: 41px
+  line-height: 115%
+  margin-bottom: 32px
+
+.content__tickets
+  margin-bottom: 64px
+  @media screen and (min-width: $md)
+    padding: 0
+
+.tickets__heading
+  color: $gray-9
+  font-family: $serif-font
+  font-weight: 900
+  font-size: 28px
+  line-height: 115%
+  margin-bottom: 32px
+
+.tickets__list
+  margin: 0
+  padding: 0 0 0 0
+  list-style: none
+
+.tickets__list-item
+  display: flex
+  color: $gray-8
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 20px
+  line-height: 142%
+  &:before
+    content: ""
+    flex: 0 0 8px
+    margin-top: 9px
+    width: 8px
+    height: 8px
+    border-radius: 50%
+    background-color: $indigo-9
+    margin-right: 14px
+
+.tickets__list-item:not(:last-child)
+  margin-bottom: 32px
+
+.list__item
+  display: flex
+.list__item:not(:first-child)
+  padding-top: 16px
+.list__item:not(:last-child)
+  padding-bottom: 16px
+  border-bottom: 1px solid $gray-3
+
+.list__heading
+  color: $gray-9
+  font-weight: 900
+  font-size: 18px
+  line-height: 120%
+  flex: 1 0 172px
+.list__content
+  color: $gray-8
+  font-weight: 400
+  font-size: 16px
+  line-height: 142%
+
+.content__faq
+  @media screen and (min-width: $md)
+    padding: 0
+
+.faq__accordeon
+  display: flex
+  flex-flow: column
+  gap: 24px
+
+.faq__accordeon-item
+  background: $gray-0
+  border-radius: 8px
+  word-break: break-word
+
+.faq__accordeon-item__heading
+  color: $gray-9
+  font-family: $serif-font
+  font-weight: 700
+  font-size: 22px
+  line-height: 115%
+  display: flex
+  align-items: center
+  padding: 16px 32px 16px 40px
+
+.faq__accordeon-item__content
+  color: $gray-8
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 20px
+  line-height: 142%
+
+.faq__accordeon-item__icon
+  background-color: white
+  &:before
+    border-top-color: $gray-9
+
+.faq__accordeon-item__wrapper
+  padding: 32px 32px 40px 40px

@@ -1,0 +1,59 @@
+//- out: ../people.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("people__breadcrumbs", "", "Преподавателям", "", ["index.html", "Главная"], ["О Партии"], ["Лица Партии"])
+          
+mixin single-block()
+  .single-block
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Учебные занятия в Третьяковской галерее
+      .single-block__subheading.site-block__subheading Учебные занятия в Третьяковской галерее
+      .single-block__authors.authors
+        .author.single-block__author
+          img(src="images/pushkin.png")
+          .author__content
+            .author__name Александр Сергеевич Пушкин
+            .author__desc Русский поэт
+
+mixin author-row(img, name, desc)
+  .author-wrapper.author-wrapper-row
+    .author
+      img(src=img)
+      .author__content
+        .author__name=name
+        .author__desc=desc
+        
+mixin author(img, name, desc)
+  .author-wrapper
+    .author
+      img(src=img)
+      .author__content
+        .author__name=name
+        .author__desc=desc
+    
+mixin multiple-block()
+  .multiple-block
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Учебные занятия в Третьяковской галерее
+      .multiple-block__subheading.site-block__subheading Мы будем очень благодарны вам за отклики и конструктивные предложения по обновленным правилам проведения учебных занятий на основных экспозициях в зданиях Третьяковской галереи. 
+      .authors
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        .author-wrapper.author-wrapper__empty
+          .author
+        +author-row("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        .author-wrapper.author-wrapper__empty
+          .author
+          
+block content
+  +page-header
+  +single-block
+  +multiple-block
+  +news-block

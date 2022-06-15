@@ -1,0 +1,49 @@
+//- out: ../regional_contacts.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("regional-contacts__breadcrumbs", "", "Районные организации", "", ["index.html", "Главная"], ["Контакты"], ["Районные организации"])
+
+mixin regional-item(region)
+  .regional-item
+    .regional-item__region=region
+    .regional-item__container
+      .regional-item__details
+        .regional-item__row
+          .regional-item__label Имя
+          .regional-item__label.name Беляков Андрей Викторович
+        .regional-item__row
+          .regional-item__label Телефон
+          .regional-item__label.phone +7 (812) 40-71-29 
+        .regional-item__row
+          .regional-item__label Электронная почта
+          .regional-item__label.email gov@kbr.ru 
+        .regional-item__row
+          .regional-item__label Адрес
+          .regional-item__label.address Суворовский просп. д. 62, комн. 52
+      a(href="#").regional-item__arrow-link.site-block__arrow-link.arrow-link Официальный сайт
+        img(src="images/icons/external-link.svg").arrow_icon
+
+mixin district-contacts-block()
+  .regional-contacts-block
+    .site-block__container.container.adaptive-padding
+      input(type="input" name="region" placeholder="Введите название района").regional-contacts-block__input
+      .regional-items
+        +regional-item("Адмиралтейский район")
+        +regional-item("Василеостровский район")
+        +regional-item("Калининский район")
+        +regional-item("Кировский район")
+        +regional-item("Колпинский район")
+        +regional-item("Калининский район")
+        +regional-item("Красногвардейский район")
+        +regional-item("Красносельский район")
+        +regional-item("Кронштадтский район")
+        +regional-item("Курортный район")
+            
+
+  
+block content
+  +page-header
+  +district-contacts-block

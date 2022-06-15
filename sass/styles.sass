@@ -1,0 +1,1578 @@
+// - default values
+$xs: 320px
+$sm: 576px
+$md: 768px
+$lg: 1024px
+$xl: 1200px
+$xxl: 1400px
+
+$pagination-break: 670px
+$video-card-item-width: 592px
+$video-card-item-width-sm: 360px
+$video-card-item-gap: 32px
+
+$max-width-xs: 280px
+$max-width-sm: 540px
+$max-width-md: 624px
+$max-width-lg: 992px
+$max-width-xl: 1140px
+$max-width-xxl: 1360px
+
+$vk-icon-color: #0077FF
+$ok-icon-color: #EE8208
+$telegram-icon-color: #28A9EB
+$whatsapp-icon-color: #56D062
+
+$serif-font: 'Source Serif Pro', serif
+$sans-serif-font: 'Ubuntu', sans-serif
+$red-0: #FFF8F6
+$indigo-7: #895FFF
+$indigo-9: #7552DC
+$text-900: #151515
+$text-500: #7B6867
+$text-300: #DAD1D0
+$background-100: #F6FAFE
+$border-color: #F0EDEC
+$gray-0: #F9F9FA
+$gray-1: #EEEDF1
+$gray-3: #D4D2DC
+$gray-5: #8B8797
+$gray-7: #6E6A77
+$gray-8: #403E46
+$gray-9: #2C2B30
+$footer-expand-icon-bg: rgba(255, 255, 255, 0.05)
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&family=Ubuntu:wght@400;500;700&display=swap')
+:root
+  font-family: $sans-serif-font
+
+.container
+  width: 100%
+  max-width: $max-width-xxl
+  @media screen and (max-width: $xl)
+    max-width: $max-width-xl
+  @media screen and (max-width: $lg)
+    max-width: $max-width-lg
+  @media screen and (max-width: $md)
+    //max-width: $max-width-md
+    max-width: none
+  //@media screen and (max-width: $sm)
+    //max-width: $max-width-sm
+  //@media screen and (max-width: $xs)
+    //max-width: $max-width-xs
+
+.adaptive-padding
+  box-sizing: border-box
+  padding: 0 72px
+  @media screen and (max-width: $sm)
+    padding: 0 20px
+
+.logo
+  display: flex
+  background-color: #CCCCCC
+  width: 135px
+  height: 40px
+  margin: 12px 0
+  flex: 0 0 auto
+  @media screen and (max-width: $md)
+    width: 108px
+    height: 32px
+  @media screen and (max-width: $sm)
+    width: 81px
+    height: 24px
+    margin: 16px 0
+
+.link-list
+  display: flex
+  padding: 0
+  margin: 0
+  list-style: none
+  gap: 56px
+
+.link-list__link
+  font-weight: bold
+  font-size: 1.6rem
+  text-decoration: none
+
+.nav-list__link
+  color: $gray-9
+  font-weight: 500
+  font-size: 1.4rem
+  line-height: 115%
+
+.arrow-link
+  text-transform: uppercase
+  color: $indigo-9
+  display: flex
+  align-items: center
+  font-size: 14px
+  font-weight: 700
+  line-height: 16px
+  text-decoration: none
+  gap: 8px
+
+.mirror-icon
+  transform: scaleX(-1)
+
+.hover-video
+  position: relative
+  cursor: pointer
+  &:after
+    position: absolute
+    content: ""
+    width: 48px
+    height: 48px
+    background-image: url("../images/icons/icon-play.svg")
+    background-repeat: no-repeat
+    background-size: contain
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+  &:hover
+    img
+      filter: brightness(50%)
+      transition: filter 0.3s
+    &:after
+      background-image: url("../images/icons/icon-play-hover.svg")
+
+.hover-video__img
+  transition: filter 0.5s
+
+.slider-wrapper
+  position: relative
+  width: 100%
+  --slider-btn-prev-padding: 1250px
+  --slider-btn-next-padding: 1250px
+  .tns-slide-active, .tns-item
+    opacity: 0.2
+    transition: opacity 0.3s
+    &:hover
+      opacity: 1
+      transition: opacity 0.3s
+  .vl-slide-center
+    opacity: 1
+    transition: opacity 0s
+
+.slider__nav__prev, .slider__nav__next
+  position: absolute
+  z-index: 100
+  top: 50%
+  transform: translateY(-50%)
+
+.slider__nav__prev
+  margin-left: 70px
+  @media screen and (min-width: $xxl)
+    margin-left: calc((100vw - var(--slider-btn-prev-padding)) / 2)
+  @media screen and (max-width: $lg)
+    margin-left: 16px
+
+.slider__nav__next
+  margin-right: 70px
+  right: 0
+  @media screen and (min-width: $xxl)
+    margin-right: calc((100vw - var(--slider-btn-next-padding)) / 2)
+  @media screen and (max-width: $lg)
+    margin-right: 16px
+
+.nav__btn
+  width: 64px
+  height: 64px
+  border-radius: 50%
+  background-color: white
+  border: 1px solid #EEEDF1
+  box-shadow: 0px 2px 10px rgba(72, 61, 60, 0.15)
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  filter: saturate(0%)
+  &:hover
+    filter: saturate(100%)
+    transition: filter 0.3s
+  opacity: 1
+  transition: all 0.5s
+  visibility: visible
+  transition: filter 0.5s, opacity 0.5s 0s
+  &[aria-disabled="true"]
+    visibility: hidden
+    opacity: 0
+    transition: visibility 0s 0.5s, opacity 0.5s 0s
+
+.nav__btn__img
+
+.nav__btn__img-rotate
+  transform: rotate(180deg)
+
+// ============ site-block ============
+
+.site-block__container
+  display: flex
+  flex-flow: column
+  align-items: center
+
+.site-block__heading
+  font-family: $serif-font
+  color: $gray-9
+  font-weight: 900
+  font-size: 4.1rem
+  line-height: 115%
+  text-align: center
+  margin-bottom: 32px
+  max-width: 800px
+  @media screen and (max-width: $md)
+    font-size: 2.8rem
+
+.site-block__subheading
+  font-family: $sans-serif-font
+  color: $gray-7
+  font-size: 1.6rem
+  line-height: 150%
+  letter-spacing: 0em
+  text-align: center
+  margin-bottom: 32px
+  font-weight: 400
+  max-width: 500px
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 145%
+  @media screen and (max-width: $sm)
+    font-size: 1.3rem
+    line-height: 152%
+
+
+.site-block__arrow-link
+  margin-bottom: 32px
+  @media screen and (max-width: $sm)
+    margin-top: 32px
+    margin-bottom: 0
+    order: 10
+
+.dark-block
+  background-color: $gray-9
+
+.dark-block__heading
+  color: white
+
+.dark-block__subheading
+  color: white
+
+.btn
+  font-family: $sans-serif-font
+  padding: 16px 40px
+  background: $indigo-9
+  box-shadow: 0px 4px 14px rgba(137, 95, 255, 0.1)
+  border-radius: 4px
+  border: 1px solid $indigo-9
+  text-transform: uppercase
+  font-weight: 700
+  font-size: 1.4rem
+  line-height: 115%
+  letter-spacing: 0.08em
+  text-decoration: none
+  color: white
+  transition: background, border 0.5s, 0.5s
+  &:hover
+    background: $indigo-7
+    border: 1px solid $indigo-7
+    transition: background, border 0.5s, 0.5s
+
+.checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+.checkbox + label
+  display: inline-flex
+  align-items: center
+  user-select: none
+
+.checkbox+label::before
+  content: ''
+  display: inline-block
+  width: 1em
+  height: 1em
+  flex-shrink: 0
+  flex-grow: 0
+  border: 1px solid $indigo-7
+  margin-right: 0.5em
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: 100% 100%
+
+.checkbox:checked + label::before
+  border-color: $indigo-7
+  //background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23895FFF' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 5.75L0.5 3.27L1.295 2.5L3 4.175L6.705 0.5L7.5 1.29L3 5.75Z' fill='%23895FFF'/%3E%3C/svg%3E")
+// ============ breadcrumb ============
+
+.breadcrumb-nav
+  padding-top: 96px
+  padding-bottom: 112px
+  text-align: center
+
+.breadcrumb__list
+  list-style: none
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: center
+  gap: 4px
+  margin-bottom: 16px
+  font-weight: 400
+  font-size: 14px
+  line-height: 115%
+
+.breadcrumb__separator
+  color: $indigo-7
+
+.breadcrumb__item
+  padding: 0
+  text-decoration: none
+  color: $gray-9
+
+.breadcrumb__title
+  position: relative
+  font-family: $serif-font
+  font-weight: 900
+  font-size: 51px
+  line-height: 125%
+  padding-bottom: 32px
+  &:after
+    position: absolute
+    content: ""
+    bottom: 0
+    height: 4px
+    width: 112px
+    left: 50%
+    background-color: $indigo-7
+    transform: translateX(-50%)
+  @media screen and (max-width: $md)
+    font-size: 3.6rem
+    line-height: 105%
+  @media screen and (max-width: $sm)
+    font-size: 2.8rem
+    line-height: 100%
+
+// ============ social-links ==============
+
+.social-link
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  background-color: rgba(white, 0.05)
+
+.social-link__vk use
+  fill: $vk-icon-color
+  transition: fill 0.3s
+
+.social-link__ok use
+  fill: $ok-icon-color
+  transition: fill 0.3s
+
+.social-link__telegram use
+  fill: $telegram-icon-color
+  transition: fill 0.3s
+
+.social-link__whatsapp use
+  fill: $whatsapp-icon-color
+  transition: fill 0.3s
+
+@media screen and (min-width: $md + 1)
+  .social-link:not(:hover) use
+    fill: $gray-3
+    transition: fill 0.7s
+
+// ============ download-cards ============
+
+.download-cards
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  gap: 64px
+  @media screen and (max-width: $lg)
+    grid-template-columns: 1fr 1fr
+  @media screen and (max-width: $md)
+    gap: 48px
+  @media screen and (max-width: $sm)
+    gap: 24px
+
+.download-card
+  display: flex
+  flex-flow: column
+  text-decoration: none
+  height: 500px
+  max-width: 288px
+  @media screen and (max-width: $sm)
+    height: 476px
+  @media screen and (max-width: $sm)
+    height: 264px
+
+  &:hover
+    .download-card__image
+      filter: brightness(70%)
+      transition: filter 0.7s
+    .download-card__download
+      opacity: 1
+      max-height: 100px
+      transition: all 0.7s
+
+.download-card__image-wrapper
+  flex: 0 1 100%
+  overflow: hidden
+  margin-bottom: 16px
+
+.download-card__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+  transition: filter 0.7s
+
+.download-card__heading
+  font-family: $serif-font
+  font-style: italic
+  font-weight: 900
+  font-size: 2.2rem
+  line-height: 110%
+  color: $gray-9
+  margin-bottom: 8px
+  @media screen and (max-width: $md)
+    font-size: 2rem
+  @media screen and (max-width: $sm)
+    font-size: 1.6rem
+
+.download-card__date
+  font-weight: 400
+  font-size: 1.6rem
+  line-height: 103%
+  color: $gray-8
+  margin-bottom: 16px
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+  @media screen and (max-width: $sm)
+    font-size: 1.3rem
+    line-height: 135%
+
+.download-card__download
+  opacity: 0
+  max-height: 0
+  transition: all 0.7s
+  margin: 0
+  font-weight: 700
+  font-size: 1.4rem
+  line-height: 115%
+  @media screen and (max-width: $md)
+    font-size: 1.2rem
+    line-height: 100%
+
+// ============ documents-list ============
+
+.documents-list
+  width: 100%
+
+.document-item:first-child
+  border-top: 1px solid $gray-3
+
+.document-item
+  width: 100%
+  padding-top: 48px
+  padding-bottom: 48px
+  border-bottom: 1px solid $gray-3
+  @media screen and (max-width: $md)
+    padding-top: 32px
+    padding-bottom: 32px
+
+.document-item__wrapper
+  max-width: 800px
+  margin: 0 auto
+
+.document-item__heading
+  margin-bottom: 24px
+  @media screen and (max-width: $md)
+    display: flex
+    justify-content: space-between
+    gap: 8px
+  @media screen and (max-width: $sm)
+    flex-flow: column
+
+.document-item__date
+  color: $indigo-7
+  font-weight: 700
+  font-size: 12px
+  line-height: 135%
+  letter-spacing: 0.07em
+  text-transform: uppercase
+  margin-bottom: 8px
+
+.document-item__name
+  font-family: $serif-font
+  color: $gray-9
+  font-weight: 900
+  font-size: 28px
+  line-height: 115%
+  margin-bottom: 24px
+  @media screen and (max-width: $md)
+    font-size: 18px
+    line-height: 120%
+    margin-bottom: 16px
+
+.document-item__desc
+  font-family: $serif-font
+  color: $gray-8
+  font-weight: 400
+  font-size: 16px
+  line-height: 150%
+  margin-bottom: 24px
+
+.document-item__download
+  margin-bottom: 0
+
+// ============ article-list ============
+
+.article-list
+  width: 100%
+
+.article-item:first-child
+  border-top: 1px solid $gray-3
+
+.article-item
+  width: 100%
+  padding: 48px 0
+  border-bottom: 1px solid $gray-3
+  &:after
+    content: ""
+    display: block
+    height: 0
+    clear: both
+
+.article-item__arrow-link
+  float: left
+  width: calc(30% - 8px)
+  @media screen and (max-width: $lg)
+    width: calc(38% - 8px)
+  @media screen and (max-width: $sm)
+    width: 100%
+
+.article-item__name
+  font-family: $serif-font
+  font-weight: 900
+  font-size: 2.8rem
+  line-height: 115%
+  margin-bottom: 32px
+  color: $gray-9
+  display: inline-block
+  width: calc(30% - 8px)
+  @media screen and (max-width: $lg)
+    width: calc(38% - 8px)
+  @media screen and (max-width: $md)
+    font-size: 1.8rem
+    line-height: 120%
+  @media screen and (max-width: $sm)
+    width: 100%
+
+.article-item__desc
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 16px
+  line-height: 150%
+  color: $gray-8
+  max-width: 800px
+  width: calc(70% - 8px)
+  float: right
+  @media screen and (max-width: $lg)
+    width: calc(62% - 8px)
+  @media screen and (max-width: $sm)
+    width: 100%
+    float: none
+
+.article-item__p:not(:last-child)
+  margin-bottom: 16px
+
+// ============ accordeon ============
+
+.accordeon-item
+  &.active
+    .accordeon-item__content
+      max-height: 700px
+      transition: max-height 1.2s
+
+.accordeon-item__heading
+  cursor: pointer
+
+.accordeon-item__content
+  overflow: hidden
+  max-height: 0px
+  transition: max-height 0.3s
+
+.accordeon-item__hover-icon
+  &:hover
+    .accordeon-item__icon
+      background-color: $indigo-7
+      transition: all 0.7s
+      &:before
+        border-top-color: white
+        transition: all 0.3s
+  &.active
+    .accordeon-item__icon
+      background-color: $indigo-9
+      transition: all 0.7s
+      &:before
+        border-top-color: white
+        transform: scale(50%) rotate(180deg) translateY(5px)
+        transition: all 0.5s
+
+.accordeon-item__icon
+  position: relative
+  margin-left: auto
+  border-radius: 50%
+  background-color: transparent
+  width: 32px
+  height: 32px
+  transition: all 0.7s
+  flex: 0 0 auto
+  &:before
+    position: absolute
+    content: ""
+    border-top-color: $indigo-9
+    border-top-width: 10px
+    border-top-style: solid
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    top: 12px
+    right: 6px
+    transform: scale(50%)
+    transition: all 0.5s
+
+// ============ expandable ============
+
+.expandable
+  &.active
+    .expandable__content
+      max-height: 700px
+      transition: max-height 1.2s
+
+.expandable__heading
+  cursor: pointer
+
+.expandable__content
+  overflow: hidden
+  max-height: 0px
+  transition: max-height 0.3s
+
+// ============ news-block ============
+
+.news-block
+  padding-top: 96px
+  padding-bottom: 88px
+  margin-bottom: 112px
+  padding: 0
+  @media screen and (max-width: $md)
+    margin-bottom: 80px
+  @media screen and (max-width: $sm)
+    margin-bottom: 64px
+
+.news-block__container
+  @media screen and (max-width: $lg)
+    padding: 0
+
+.news-block__arrow-link
+  margin-bottom: 48px
+  @media screen and (max-width: $sm)
+    margin-top: 36px
+
+.news-slider__nav__next, .news-slider__nav__prev
+  top: 20%
+  @media screen and (min-width: $lg)
+    display: none
+
+.news-items
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  grid-column-gap: 32px
+  grid-row-gap: 48px
+
+#news-slider
+  @media screen and (max-width: $lg)
+    display: block
+
+.news-item
+  display: flex
+  flex-flow: column
+  align-items: center
+  text-decoration: none
+  &:hover
+    .news-item__image
+      filter: brightness(70%)
+      transition: filter 0.7s
+
+.news-item__image
+  max-height: 208px
+  width: 100%
+  object-fit: contain
+  margin-bottom: 16px
+  transition: filter 0.7s
+
+.news-item__date
+  color: $indigo-7
+  font-weight: 700
+  font-size: 12px
+  line-height: 135%
+  letter-spacing: 0.07em
+  text-transform: uppercase
+  margin-bottom: 8px
+
+.news-item__heading
+  color: $gray-9
+  font-weight: 700
+  font-size: 20px
+  line-height: 120%
+  text-align: center
+  margin-bottom: 16px
+
+.news-item__desc
+  color: $gray-8
+  font-weight: 400
+  font-size: 16px
+  line-height: 150%
+  text-align: center
+
+.news__slider-wrapper
+  .tns-slide-active, .tns-item
+    opacity: 0.2
+    transition: opacity 0.3s
+  .tns-slide-active ~ .tns-slide-active
+    opacity: 1
+    transition: opacity 0s
+  @media screen and (min-width: $sm)
+    .tns-slide-active ~ .tns-slide-active ~ .tns-slide-active ~ .tns-slide-active
+      opacity: 0.2
+      transition: opacity 0.3s
+      &:hover
+        opacity: 1
+        transition: opacity 0.3s
+  @media screen and (max-width: $sm)
+    .tns-slide-active ~ .tns-slide-active ~ .tns-slide-active
+      opacity: 0.2
+      transition: opacity 0.3s
+      &:hover
+        opacity: 1
+        transition: opacity 0.3s
+
+  .tns-item:hover
+    opacity: 1
+    transition: opacity 0.3s
+
+// ============ uncharted-block ============
+
+.uncharted-block
+  padding-top: 96px
+  padding-bottom: 96px
+  margin-bottom: 112px
+  background-color: $gray-0
+  @media screen and (max-width: $md)
+    padding-top: 56px
+    padding-bottom: 76px
+    margin-bottom: 96px
+  @media screen and (max-width: $sm)
+    padding-top: 48px
+    padding-bottom: 68px
+    margin-bottom: 80px
+
+.uncharted-block__subheading
+  margin-bottom: 71px
+  @media screen and (max-width: $md)
+    margin-bottom: 48px
+  @media screen and (max-width: $sm)
+    margin-bottom: 32px
+
+// ============ form ============
+
+.form-progress
+  box-sizing: border-box
+  padding-bottom: 76px
+  display: flex
+  align-items: center
+  width: 417px
+  @media screen and (max-width: $sm)
+    display: none
+
+.form-progress__label-wrapper
+  position: relative
+  margin-top: 18px
+  display: flex
+  justify-content: center
+  text-align: center
+  color: $gray-8
+  font-weight: bold
+  font-size: 14px
+  line-height: 115%
+
+.form-progress__label
+  min-width: 220px
+
+.form-progress__circle
+  display: block
+  width: 11px
+  height: 11px
+  border-radius: 50%
+  background-color: $gray-3
+  &.active
+    background-color: $indigo-7
+    .form-progress__label-wrapper
+      color: $indigo-7
+
+.form-progress__connection
+  display: block
+  width: 50%
+  height: 1px
+  background-color: $gray-3
+  &.active
+    background-color: $indigo-7
+
+.form__label
+  display: flex
+  align-items: center
+  justify-content: space-between
+  font-family: $serif-font
+  color: $gray-9
+  font-weight: 700
+  font-size: 22px
+  line-height: 110%
+  width: 100%
+  margin-bottom: 32px
+  @media screen and (max-width: $lg)
+    margin-bottom: 24px
+
+.form__subscription-type-label
+  @media screen and (max-width: $lg)
+    justify-content: center
+    gap: 8px
+
+.form__required-label
+  @media screen and (max-width: $lg)
+    flex-flow: column
+    gap: 8px
+
+.form__subscription-type-wrapper
+  width: 100%
+
+.form__subscription-type
+  display: flex
+  gap: 32px
+  margin-bottom: 48px
+  @media screen and (max-width: $lg)
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+  @media screen and (max-width: $sm)
+    display: block
+
+.form__subscription_card-wrapper
+  flex: 1
+  cursor: pointer
+  position: relative
+
+.form__subscription_card__radio
+  position: absolute
+  z-index: -1
+  left: 50%
+  bottom: 0
+  transform: translateX(-50%)
+  cursor: pointer
+
+@media screen and (max-width: $lg)
+  .form__subscription_card-wrapper:nth-of-type(2n-1)
+    justify-self: right
+
+.form__subscription_card
+  position: relative
+  box-sizing: border-box
+  display: flex
+  flex-flow: column
+  align-items: center
+  background-color: white
+  border: 1px solid $gray-3
+  border-radius: 4px
+  min-height: 280px
+  padding: 0 32px
+  max-width: 280px
+  @media screen and (max-width: $sm)
+    //margin-right: 16px
+
+  &.checked
+    border: 1px solid $indigo-9
+    .card__check_mark
+      visibility: visible
+
+.card__icon
+  padding: 71px 0 35px
+
+.card__heading
+  font-weight: 700
+  font-size: 18px
+  line-height: 135%
+  color: $gray-9
+  padding-bottom: 12px
+
+.card__content
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 14px
+  line-height: 130%
+  color: $gray-7
+  text-align: center
+
+.card__check_mark
+  visibility: hidden
+  position: absolute
+  top: 16px
+  right: 16px
+
+.form__required-msg
+  display: flex
+  align-items: center
+  color: $gray-8
+  font-weight: 400
+  font-size: 12px
+  line-height: 115%
+
+.required-msg__icon
+  margin: 0 6px
+
+.form__input-fields
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  gap: 32px
+  width: 100%
+  margin-bottom: 48px
+  @media screen and (max-width: $md)
+    grid-template-columns: 1fr
+    width: calc(8/12 * 100%)
+
+.form__personal_agreement
+  display: flex
+  align-items: center
+  margin-bottom: 26px
+  color: $gray-9
+  font-weight: 500
+  font-size: 12px
+  line-height: 115%
+  gap: 4px
+
+.input__required-icon
+  position: absolute
+  right: 18px
+
+.form__footer
+  display: flex
+  flex-flow: column
+  align-items: stretch
+
+// ============ form-input ============
+
+.form__input-container
+  position: relative
+  display: flex
+  align-items: center
+
+.form__input
+  padding: 16px 44px 16px 24px
+  font-size: 1.6rem
+  letter-spacing: 0.08em
+  font-weight: 400
+  line-height: 150%
+  width: calc(100% - 56px)
+  background-color: white
+  border: 1px solid $gray-1
+  border-radius: 4px
+  width: 100%
+  &:focus
+    outline: none
+    border: 1px solid $indigo-9
+  &:placeholder-shown
+    + .input__label-wrapper
+      max-width: 0
+  &:not(:placeholder-shown),
+  &:focus:not(:placeholder-shown)
+    + .input__label-wrapper
+      max-width: 100%
+      transition: max-width 0.8s
+
+.input__label-wrapper
+  position: absolute
+  margin-left: 16px
+  margin-top: -58px
+  overflow: hidden
+  transition: max-width 0.4s
+
+.input__label
+  font-weight: 700
+  font-size: 1.2rem
+  line-height: 150%
+  letter-spacing: 0.11em
+  text-transform: uppercase
+  color: $indigo-7
+  background-color: white
+  padding: 0 8px
+  white-space: nowrap
+
+// ============ pagination ============
+
+.pagination
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  gap: 8px
+  @media screen and (max-width: $pagination-break)
+    flex-wrap: wrap
+
+.pagination__pages
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 12px
+  @media screen and (max-width: $md)
+    gap: 8px
+  @media screen and (max-width: $pagination-break)
+    order: 0
+    flex: 100%
+    gap: 18px
+    margin-bottom: 25px
+    &> :nth-child(n + 4):nth-last-child(n + 4)
+      display: none
+
+.pagination-btn
+  padding: 8px 4px
+  min-width: 32px
+  height: 32px
+  background-color: transparent
+  color: $gray-9
+  border-color: $gray-1
+  transition: all 0.5s
+  font-weight: normal
+  box-sizing: border-box
+  display: flex
+  justify-content: center
+  line-height: 95%
+  &:hover
+    border-color: $gray-1
+    background-color: $gray-1
+    transition: all 0.5s
+
+.pagination-btn-active
+  color: white
+  border-color: $indigo-7
+  background-color: $indigo-7
+  cursor: default
+  &:hover
+    background-color: $indigo-7
+
+.mobile__pagination-btn
+  display: none
+  @media screen and (max-width: $pagination-break)
+    display: block
+  &.inactive
+    opacity: 0.8
+    filter: grayscale(100%)
+    cursor: default
+    &:hover
+      background-color: white
+      border-color: $gray-1
+
+.pagination-arrow
+  color: $gray-9
+  display: flex
+  align-items: center
+  font-size: 14px
+  font-weight: 400
+  line-height: 115%
+  text-decoration: none
+  gap: 3px
+  &.inactive
+    opacity: 0.2
+  @media screen and (max-width: $pagination-break)
+    display: none
+
+// ============ dropdown ============
+
+.dropdown
+  position: relative
+  min-width: 150px
+  &.show
+    .dropdown-list
+      display: flex
+
+.dropdown-toggle
+  font-family: $sans-serif-font
+  position: relative
+  width: 100%
+  display: flex
+  justify-content: space-between
+  background-color: white
+  padding: 12px 12px 12px 16px
+  outline: none
+  border: 1px solid #E5E5E5
+  color: $gray-9
+  font-weight: 400
+  font-size: 14px
+  line-height: 115%
+  &:after
+    position: relative
+    content: ""
+    border-top-color: $indigo-9
+    border-top-width: 10px
+    border-top-style: solid
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+    top: 2px
+    right: 0
+    transform: scale(50%)
+
+.dropdown-list
+  border: 1px solid $gray-3
+  border-top: none
+  background: white
+  position: absolute
+  z-index: 1000
+  display: none
+  left: 0
+  right: 0
+  margin: 0
+  padding: 0
+  list-style: none
+  flex-flow: column
+  top: 100%
+  color: $gray-9
+  font-weight: 400
+  font-size: 14px
+  line-height: 115%
+  cursor: default
+
+.dropdown-item
+  padding: 8px 8px 8px 16px
+
+.dropdown-item:hover
+  background-color: $gray-3
+
+.dropdown-item.selected
+  background-color: $indigo-7
+
+// ============ date-filter ============
+
+.date-filter
+  display: flex
+  gap: 32px
+  justify-content: center
+  align-items: center
+  margin-bottom: 48px
+  @media screen and (max-width: $md)
+    flex-flow: column
+    align-items: stretch
+    width: 100%
+    margin-bottom: 64px
+  @media screen and (max-width: $sm)
+    gap: 16px
+    margin-bottom: 48px
+
+.date-filter__clear-btn
+  text-decoration: none
+  color: $gray-3
+  font-weight: 400
+  font-size: 14px
+  line-height: 115%
+  text-align: center
+
+.date-filter__dropdowns-wrapper
+  display: flex
+  gap: 32px
+  @media screen and (max-width: $sm)
+    gap: 16px
+    flex-flow: column
+
+.date-filter__dropdown
+  flex: 1
+// ============ authors-block ============
+
+.authors-block
+  background-color: $red-0
+  padding-top: 80px
+  padding-bottom: 112px
+  @media screen and (max-width: $md)
+    padding-top: 56px
+    padding-bottom: 80px
+  @media screen and (max-width: $sm)
+    padding-top: 66px
+    padding-bottom: 96px
+
+.authors-block__arrow
+  margin-bottom: 48px
+
+.authors
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  border-top: 1px solid $gray-3
+  border-bottom: 1px solid $gray-3
+  padding-top: 32px
+  padding-bottom: 32px
+  @media screen and (max-width: $lg)
+    grid-template-columns: repeat(2, 1fr)
+  @media screen and (max-width: $sm)
+    display: flex
+    flex-flow: column
+    padding-top: 16px
+    padding-bottom: 0
+
+.author-wrapper__empty
+  @media screen and (max-width: $lg)
+    display: none
+
+.author
+  display: flex
+  align-items: center
+  @media screen and (min-width: $lg + 1)
+    padding-top: 32px
+    padding-bottom: 32px
+    border-top: 1px solid $gray-3
+  @media screen and (max-width: $lg) and (min-width: $sm)
+    padding-left: 32px
+    padding-right: 32px
+    border-left: 1px solid $gray-3
+
+.author-wrapper
+  @media screen and (min-width: $lg + 1)
+    border-left: 1px solid $gray-3
+    padding-left: 32px
+    padding-right: 32px
+  @media screen and (max-width: $lg)
+    border-top: 1px solid $gray-3
+    padding-bottom: 32px
+    padding-top: 32px
+  @media screen and (max-width: $sm)
+    padding-bottom: 16px
+    padding-top: 16px
+
+@media screen and (max-width: $sm)
+  .author-wrapper:nth-child(1)
+    border-top: none
+    padding-top: 0px
+
+@media screen and (min-width: $lg + 1)
+  // 1st-column
+  .author-wrapper:nth-child(3n-2)
+    border-left: none
+    padding-left: 0
+  // 3rd-column
+  .author-wrapper:nth-child(3n)
+    padding-right: 0
+  // 1st-row
+  .author-wrapper:nth-child(n+1):nth-child(-n+3)
+    .author
+      padding-top: 0
+      border-top: none
+  // 3rd-row
+  .author-wrapper:nth-last-child(n+1):nth-last-child(-n+3)
+    .author
+      padding-bottom: 0
+@media screen and (max-width: $lg) and (min-width: $sm + 1)
+  // 1st-row
+  .author-wrapper:nth-child(n+1):nth-child(-n+2)
+    border-top: none
+    padding-top: 0
+  // last-row
+  .author-wrapper:nth-last-child(n+1):nth-last-child(-n+2)
+    padding-bottom: 0
+  // 1st-column
+  .author-wrapper:nth-child(2n-1)
+    .author
+      padding-left: 0
+      border-left: none
+  // 2nd-column
+  .author-wrapper:nth-child(2n)
+    .author
+      padding-right: 0
+
+.author-wrapper-row
+  @media screen and (max-width: $lg) and (min-width: $sm + 1)
+    grid-column: span 2
+    .author
+      width: 50%
+      margin: 0 auto
+      border-left: none
+
+.author__content
+  margin-left: 24px
+
+.author__name
+  color: $gray-9
+  font-weight: 700
+  font-size: 2.0rem
+  line-height: 120%
+  margin-bottom: 8px
+  @media screen and (max-width: $md)
+    font-size: 1.8rem
+
+.author__desc
+  color: $gray-7
+  font-weight: 400
+  font-size: 16px
+  line-height: 150%
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 145%
+
+// ============ events ============
+
+.events
+  box-sizing: border-box
+  width: 100%
+  display: grid
+  grid-template-columns: 33.33% 33.33% 33.33%
+  @media screen and (max-width: $lg)
+    grid-template-columns: 50% 50%
+  @media screen and (max-width: $sm)
+    grid-template-columns: 100%
+
+.event
+  display: flex
+  flex-flow: column
+  text-decoration: none
+  align-items: center
+  height: 100%
+
+  &:hover
+    .event__image:not(.event__image-over)
+      filter: brightness(70%)
+      transition: filter 0.3s
+
+.event__image
+  max-width: 192px
+  width: 100%
+  height: 192px
+  object-fit: contain
+  margin-bottom: 32px
+  transition: filter 0.3s
+
+.event__image-over
+  filter: saturate(0%)
+
+.event__date
+  font-family: $serif-font
+  font-weight: 900
+  font-size: 2.8rem
+  line-height: 115%
+  color: $gray-9
+  margin-bottom: 16px
+  @media screen and (max-width: $md)
+    font-size: 2rem
+    line-height: 110%
+  @media screen and (max-width: $sm)
+    font-size: 1.8rem
+
+.event__time
+  color: $indigo-7
+  margin-bottom: 16px
+  font-weight: 700
+  font-size: 1.2rem
+  line-height: 135%
+  letter-spacing: 0.07em
+  text-transform: uppercase
+  text-align: center
+  @media screen and (max-width: $md)
+    font-size: 1.0rem
+    line-height: 120%
+
+.event__time-over
+  color: $gray-3
+
+.event__description
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 1.6rem
+  line-height: 150%
+  text-align: center
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 145%
+  @media screen and (max-width: $sm)
+    font-size: 1.3rem
+    line-height: 136%
+// ============ video-slider ============
+
+.videos-slider__wrapper
+  width: 100%
+
+#videos-slider
+  width: 100%
+
+$videos-item-width: 488px
+$videos-item-width-sm: 272px
+
+#videos-slider-iw
+  transform: translateX(calc((100vw - $videos-item-width * 2 + 32px) * 0.5))
+  @media screen and (max-width: $lg)
+    transform: translateX(calc((100vw - $videos-item-width) * 0.5))
+  @media screen and (max-width: $sm)
+    transform: translateX(calc((100vw - $videos-item-width-sm) * 0.5))
+
+.videos-item__wrapper
+  width: $videos-item-width
+  @media screen and (max-width: $sm)
+    width: $videos-item-width-sm
+
+.videos-item
+  position: relative
+  min-height: 288px
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  text-decoration: none
+  @media screen and (max-width: $sm)
+    min-height: 256px
+  &:hover
+    .videos-item__image-wrapper
+      filter: brightness(40%)
+      transition: filter 0.3s
+    .videos-item__desc
+      max-height: 200px
+      transition: all 0.6s
+
+.videos-item__content
+  font-family: $serif-font
+  display: flex
+  flex-flow: column
+  align-items: flex-start
+  padding: 0 32px 32px 32px
+  margin-top: auto
+  @media screen and (max-width: $sm)
+    padding: 0 28px 8px 28px
+
+.videos-item__image-wrapper
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: -1
+  transition: filter 0.3s
+  &:after
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ""
+    background: linear-gradient(62deg, rgba(44, 43, 48, 0.9) 0%, rgba(44, 43, 48, 0) 100%)
+
+.videos-item__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.videos-item__heading
+  color: white
+  margin-bottom: 12px
+  font-weight: 900
+  font-size: 2.2rem
+  line-height: 110%
+  @media screen and (max-width: $md)
+    font-size: 2.0rem
+  @media screen and (max-width: $sm)
+    font-size: 1.8rem
+  &:after
+    display: block
+    position: relative
+    content: ""
+    height: 2px
+    width: 64px
+    background-color: $indigo-7
+    left: 0
+    margin-top: 16px
+
+.videos-item__desc-wrapper
+  overflow: hidden
+
+.videos-item__desc
+  max-height: 0
+  color: white
+  font-style: italic
+  font-weight: 600
+  font-size: 1.6rem
+  line-height: 135%
+  transition: all 0.6s
+
+.videos-slider__wrapper
+  --slider-btn-prev-padding: 1100px
+  --slider-btn-next-padding: 1130px
+  .tns-slide-active, .tns-item
+    opacity: 0.2
+    transition: opacity 0.3s
+    &:hover
+      opacity: 1
+      transition: opacity 0.3s
+  .vl-slide-center
+    opacity: 1
+    transition: opacity 0s
+  @media screen and (min-width: $md)
+    .vl-slide-center + .tns-item
+      opacity: 1
+      transition: opacity 0s
+
+.videos-slider__nav__next, .videos-slider__nav__prev
+  @media screen and (max-width: $sm)
+    display: none
+
+// ============ library-block cards ============
+
+.library-block__download-cards
+  margin-bottom: 48px
+  padding-bottom: 80px
+  border-bottom: 1px solid $gray-3
+  @media screen and (max-width: $md)
+    margin-bottom: 32px
+  @media screen and (max-width: $sm)
+    padding-bottom: 32px
+    margin-bottom: 24px
+    grid-template-columns: 1fr
+
+.library-block__download-card
+  @media screen and (max-width: $sm)
+    flex-flow: row
+    gap: 16px
+    max-width: none
+    height: 100px
+
+.library-block__image-wrapper
+  @media screen and (max-width: $sm)
+    max-width: 56px
+
+.library-block__download-card__download
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 115%
+  @media screen and (max-width: $sm)
+    max-height: none
+    opacity: 1
+    font-size: 1.2rem
+
+.library-block
+  margin-bottom: 112px
+  @media screen and (max-width: $md)
+    margin-bottom: 96px
+  @media screen and (max-width: $sm)
+    margin-bottom: 80px
+
+// individual styles for each page in separate files
+@import header
+@import footer
+@import index
+@import school
+@import mission
+@import visitor_rules
+@import people
+@import personal_practice
+@import documents
+@import library
+@import news
+@import multimedia
+@import news_papers
+@import events
+@import publication
+@import volunteer
+@import available_museum
+@import regional_contacts

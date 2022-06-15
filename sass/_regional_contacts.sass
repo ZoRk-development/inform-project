@@ -1,0 +1,120 @@
+.regional-contacts__breadcrumbs
+  padding-top: 64px
+  padding-bottom: 48px
+
+.regional-contacts-block
+  margin-bottom: 120px
+  @media screen and (max-width: $lg)
+    margin-bottom: 60px
+
+
+.regional-contacts-block__input
+  box-sizing: border-box
+  width: 100%
+  margin-bottom: 64px
+  padding: 16px 24px
+  border: 1px solid $gray-1
+  border-radius: 4px
+  outline: none
+  @media screen and (max-width: $lg)
+    margin-bottom: 48px
+
+.regional-items
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 32px
+  grid-row-gap: 64px
+  align-items: stretch
+  justify-content: center
+  width: 100%
+  @media screen and (max-width: $lg)
+    grid-column-gap: 16px
+  @media screen and (max-width: $sm)
+    grid-template-columns: 1fr
+    grid-row-gap: 42px
+
+.regional-item
+  display: flex
+  flex-flow: column
+  align-items: center
+
+.regional-item__region
+  display: inline-block
+  font-family: $serif-font
+  text-align: center
+  font-weight: 900
+  font-size: 2.8rem
+  line-height: 115%
+  color: $gray-9
+  background-color: white
+  padding: 0 24px
+  z-index: 1
+  @media screen and (max-width: $lg)
+    display: inline-flex
+    align-items: flex-end
+    min-height: 46px
+  @media screen and (max-width: $md)
+    font-size: 2rem
+  @media screen and (max-width: $sm)
+    font-size: 1.6rem
+
+.regional-item__row
+  display: flex
+  justify-content: space-between
+  border-bottom: 1px solid $gray-1
+  padding-bottom: 12px
+  @media screen and (max-width: $lg)
+    flex-flow: column
+
+.regional-item__row:not(:first-child)
+  padding-top: 12px
+
+.regional-item__container
+  display: flex
+  flex-flow: column
+  box-sizing: border-box
+  align-items: stretch
+  border: 1px solid $gray-1
+  margin-top: -16px
+  width: 100%
+  @media screen and (max-width: $sm)
+    margin-top: -8px
+
+.regional-item__details
+  padding: 60px 64px 40px
+  @media screen and (max-width: $lg)
+    padding: 48px 40px 32px
+  @media screen and (max-width: $sm)
+    padding: 32px 24px 24px
+
+
+.regional-item__label:last-child
+  text-align: right
+  font-family: $serif-font
+  color: $gray-9
+  font-weight: 600
+  font-size: 1.6rem
+  line-height: 150%
+  @media screen and (max-width: $lg)
+    text-align: left
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+
+.regional-item__label:first-child
+  text-align: left
+  color: $gray-7
+  font-weight: 400
+  font-size: 1.4rem
+  line-height: 170%
+  @media screen and (max-width: $md)
+    font-size: 1.3rem
+
+.regional-item__arrow-link
+  align-self: center
+  margin-bottom: 40px
+  @media screen and (max-width: $lg)
+    margin-bottom: 32px
+  @media screen and (max-width: $sm)
+    margin-bottom: 24px
+  @media screen and (max-width: $sm)
+    font-size: 1.2rem

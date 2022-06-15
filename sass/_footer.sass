@@ -1,0 +1,137 @@
+.footer
+  background-color: $gray-9
+  color: $gray-3
+  display: flex
+  flex-flow: column
+  align-items: stretch
+
+.footer__link-list
+  flex-flow: column
+  gap: 16px
+
+.footer__logo
+  width: 203px
+  height: 60px
+  @media screen and (max-width: $md)
+    width: 162px
+    height: 48px
+  @media screen and (max-width: $sm)
+    width: 101px
+    height: 30px
+
+.footer__logo-container
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border-bottom: 1px solid $gray-8
+  padding-top: 64px
+  padding-bottom: 48px
+  @media screen and (max-width: $sm)
+    padding-top: 0
+    padding-bottom: 40px
+    border-bottom: none
+    order: 2
+
+.footer__links
+  display: flex
+  padding-top: 48px
+  padding-bottom: 48px
+  border-bottom: 1px solid $gray-8
+  justify-content: space-between
+  @media screen and (max-width: $lg)
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 32px
+    padding-top: 32px
+    padding-bottom: 32px
+  @media screen and (max-width: $sm)
+    display: flex
+    flex-flow: column
+    order: 0
+
+.footer__expandable__content
+  @media screen and (min-width: $sm)
+    max-height: none
+
+.heading-list__header
+  color: $gray-8
+  font-family: $serif-font
+  font-weight: 900
+  font-size: 2.2rem
+  line-height: 145%
+  margin-bottom: 16px
+  display: flex
+  @media screen and (max-width: $sm)
+    color: white
+
+.footer__links__link
+  color: $gray-3
+  font-weight: 500
+  font-size: 1.4rem
+  line-height: 170%
+  @media screen and (max-width: $sm)
+    font-size: 1.6rem
+    line-height: 150%
+
+.footer__contacts
+  display: flex
+  border-bottom: 1px solid $gray-8
+  padding-top: 48px
+  padding-bottom: 48px
+  align-items: center
+  gap: 16px
+  @media screen and (max-width: $sm)
+    flex-flow: column
+    padding-top: 40px
+    padding-bottom: 40px
+    order: 1
+    border-bottom: none
+    align-items: stretch
+
+.footer__contacts__info-block
+  @media screen and (max-width: $sm)
+    border-bottom: 1px solid $gray-8
+
+.footer__politics
+  padding-top: 48px
+  padding-bottom: 48px
+  @media screen and (max-width: $md)
+    padding-top: 32px
+    padding-bottom: 32px
+    text-align: center
+  color: $gray-8
+  font-weight: 400
+  font-size: 1.4rem
+  line-height: 115%
+  @media screen and (max-width: $sm)
+    order: 4
+
+.footer__btn
+  display: flex
+  align-items: center
+  background-color: transparent
+  border: 1px solid $gray-8
+  padding: 16px 16px 16px 32px
+  box-shadow: none
+  @media screen and (max-width: $sm)
+    display: none
+
+.footer__btn-small
+  display: flex
+  @media screen and (min-width: $sm)
+    display: none
+
+.footer__accordeon-item__hover-icon
+  &:hover
+    .accordeon-item__icon
+      background-color: $footer-expand-icon-bg
+  &.active
+    .accordeon-item__icon
+      background-color: $footer-expand-icon-bg
+
+.footer__accordeon-item__icon
+  background-color: $footer-expand-icon-bg
+  @media screen and (min-width: $sm)
+    display: none
+  &:before
+    border-top-color: white

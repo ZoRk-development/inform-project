@@ -1,0 +1,19 @@
+.news__breadcrumbs
+  padding-top: 64px
+  padding-bottom: 96px
+  @media screen and (max-width: $md)
+    padding-bottom: 64px
+  @media screen and (max-width: $sm)
+    padding-bottom: 48px
+
+.news-block__news-items
+  margin-bottom: 48px
+  padding-bottom: 80px
+  border-bottom: 1px solid $gray-3
+  @media screen and (max-width: $lg)
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 24px
+    grid-row-gap: 40px
+  @media screen and (max-width: $sm)
+    grid-template-columns: 1fr
+    grid-row-gap: 32px

@@ -1,0 +1,46 @@
+//- out: ../personal_practice.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("personal-pracice__breadcrumbs", "", "Самостоятельные занятия", "", ["index.html", "Главная"], ["О Партии"], ["Коммунистические и левые СМИ"])
+
+mixin rules-block()
+  .rules-block
+    .site-block__container.container.adaptive-padding
+      .article-list
+        .article-item
+          .rules-block__article-heading
+            .rules-block__article-item__name.article-item__name Что такое самостоятельное занятие в Галерее?
+            a(href="#").rules-block__article-item__arrow-link.article-item__arrow-link.site-block__arrow-link.arrow-link Перейти на сайт
+              img(src="images/icons/external-link.svg").arrow_icon
+          .rules-block__article-item__desc.article-item__desc
+            p.article-item__p Ознакомьтесь с Правилами посещения Третьяковской галереи до начала проведения  самостоятельного занятия.
+            p.article-item__p Перед началом самостоятельного занятия ведущему занятие необходимо получить у администратора на стойке информации специальный бейдж. 
+            p.article-item__p Обращаем внимание, что в Галерее разрешена некоммерческая фото- и видеосъемка без вспышки, без использования монопода или палки для селфи. 
+          
+        .article-item
+          .rules-block__article-heading
+            .rules-block__article-item__name.article-item__name Где и когда можно проводить самостоятельное занятие? 
+            a(href="#").rules-block__article-item__arrow-link.article-item__arrow-link.site-block__arrow-link.arrow-link Перейти на сайт
+              img(src="images/icons/external-link.svg").arrow_icon
+          .rules-block__article-item__desc.article-item__desc
+            p.article-item__p Ознакомьтесь с Правилами посещения Третьяковской галереи до начала проведения  самостоятельного занятия.
+            p.article-item__p Перед началом самостоятельного занятия ведущему занятие необходимо получить у администратора на стойке информации специальный бейдж. 
+            p.article-item__p Обращаем внимание, что в Галерее разрешена некоммерческая фото- и видеосъемка без вспышки, без использования монопода или палки для селфи. 
+          
+        .article-item
+          .rules-block__article-heading
+            .rules-block__article-item__name.article-item__name Количество участников и продолжительность самостоятельного занятия 
+            a(href="#").rules-block__article-item__arrow-link.article-item__arrow-link.site-block__arrow-link.arrow-link Перейти на сайт
+              img(src="images/icons/external-link.svg").arrow_icon
+          .rules-block__article-item__desc.article-item__desc
+            p.article-item__p Ознакомьтесь с Правилами посещения Третьяковской галереи до начала проведения  самостоятельного занятия.
+            p.article-item__p Перед началом самостоятельного занятия ведущему занятие необходимо получить у администратора на стойке информации специальный бейдж. 
+            p.article-item__p Обращаем внимание, что в Галерее разрешена некоммерческая фото- и видеосъемка без вспышки, без использования монопода или палки для селфи. 
+  
+block content
+  +page-header
+  +rules-block
+  +uncharted-block

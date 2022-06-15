@@ -1,0 +1,52 @@
+//- out: ../events.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("events-block__breadcrumbs", "", "Анонсы мероприятий", "", ["index.html", "Главная"], ["Новости"], ["Анонсы мероприятий"])
+
+mixin event-item(image, image_class, date, time, time_class)
+  .event-wrapper
+    .event
+      img(src=image class=image_class).event__image
+      .event__date=date
+      .event__time(class=time_class)=time
+      .event__description
+        block
+       
+mixin events-block()
+  .events-block
+    .site-block__container.container.adaptive-padding
+      +date-filter
+      .events-block__events.events
+        +event-item("images/circle-image.png", "", "1 Мая", "Начало в 17:00")
+          | Выставка "Египтомания. К 200-летию дешифровки египетских иероглифов Шампольоном"
+        +event-item("images/circle-image.png", "", "23 Апреля", "Начало в 11:00")
+          | Кейс-чемпионат «Пятёрочки» признан лучшим карьерным событием для молодёжи Москвы 
+        +event-item("images/circle-image.png", "event__image-over", "17 Февраля", "Мероприятия прошло", "event__time-over")
+          | В СФ обсудили ход реализации первого этапа программы инвестиционных квот для рыбохозяйственного комплекса
+        +event-item("images/circle-image.png", "event__image-over", "1 Мая", "Мероприятия прошло", "event__time-over")
+          | Выставка "Египтомания. К 200-летию дешифровки египетских иероглифов Шампольоном"
+        +event-item("images/circle-image.png", "event__image-over", "23 Апреля", "Мероприятия прошло", "event__time-over")
+          | Кейс-чемпионат «Пятёрочки» признан лучшим карьерным событием для молодёжи Москвы 
+        +event-item("images/circle-image.png", "event__image-over", "17 Февраля", "Мероприятия прошло", "event__time-over")
+          | В СФ обсудили ход реализации первого этапа программы инвестиционных квот для рыбохозяйственного комплекса
+        +event-item("images/circle-image.png", "event__image-over", "1 Мая", "Мероприятия прошло", "event__time-over")
+          | Выставка "Египтомания. К 200-летию дешифровки египетских иероглифов Шампольоном"
+        +event-item("images/circle-image.png", "event__image-over", "23 Апреля", "Мероприятия прошло", "event__time-over")
+          | Кейс-чемпионат «Пятёрочки» признан лучшим карьерным событием для молодёжи Москвы 
+        +event-item("images/circle-image.png", "event__image-over", "17 Февраля", "Мероприятия прошло", "event__time-over")
+          | В СФ обсудили ход реализации первого этапа программы инвестиционных квот для рыбохозяйственного комплекса
+        +event-item("images/circle-image.png", "event__image-over", "1 Мая", "Мероприятия прошло", "event__time-over")
+          | Выставка "Египтомания. К 200-летию дешифровки египетских иероглифов Шампольоном"
+        +event-item("images/circle-image.png", "event__image-over", "23 Апреля", "Мероприятия прошло", "event__time-over")
+          | Кейс-чемпионат «Пятёрочки» признан лучшим карьерным событием для молодёжи Москвы 
+        +event-item("images/circle-image.png", "event__image-over", "17 Февраля", "Мероприятия прошло", "event__time-over")
+          | В СФ обсудили ход реализации первого этапа программы инвестиционных квот для рыбохозяйственного комплекса
+      +pagination
+
+block content
+  +page-header
+  +events-block
+  +uncharted-block

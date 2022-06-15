@@ -1,0 +1,129 @@
+//- out: ../available_museum.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin exhibition-block()
+  .exhibition-block.container.adaptive-padding
+    .exhibition-block__container.site-block__container
+      .exhibition-block__heading.site-block__heading Генрих Семирадский
+      .exhibition-block__subheading.site-block__subheading О Генрихе Семирадском, магии его таланта, стратегии успеха расскажет на лекции Татьяна Карпова, куратор выставки «Генрих Семирадский.
+      a(role="button" href="#available_museum_form").exhibition-block__btn.btn Заполнить анкету
+      img(src="images/book_mockup.png").exhibition-block__backgound
+
+mixin address-time-block()
+  .address-time-block
+    .site-block__container.container.adaptive-padding
+      .address-time-block__heading.site-block__heading Адрес и часы работы 
+      .description-block
+        .description-block__card
+          .description-block__wrapper Генрих Семирадский — центральная фигура искусства позднего академизма
+          .description-block__number 1
+        .description-block__card
+          .description-block__wrapper Автор солнечных античных идиллий, погружающих зрителей в атмосферу безмятежного бытия человечества
+          .description-block__number 2
+        .description-block__card
+          .description-block__wrapper Один из крупнейших исторических живописцев своего времени, создатель многочисленных ансамблей росписей в церквях
+          .description-block__number 3
+        .description-block__card
+          .description-block__wrapper Для Генриха Семирадского характерна сосредоточенная работа над эстетикой формы, культ красоты, увлечение эпохой античности, поэтическое восприятие природы и человека, отказ от прямолинейной злободневности.
+          .description-block__number 4
+        .description-block__card
+          .description-block__wrapper К лучшим качествам его дарования можно отнести и детальное знание бытовой стороны жизни прошлых эпох, красоту композиционных решений, богатство и разнообразие живописных приемов.
+          .description-block__number 5
+        .description-block__card
+          .description-block__wrapper Изучение творчества этого художника-эрудита предполагает проникновение в хитросплетения сюжетов, анализ литературных источников
+          .description-block__number 6
+
+mixin details-block()
+  .details-block
+    .details-block__container.site-block__container.container.adaptive-padding
+      .details-block__heading.site-block__heading Подробнее
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+      .icon-text
+        img(src="images/icons/ant-design_check-circle-twotone.svg")
+        | Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи»
+
+mixin available-form-block()
+  form.available-form-block#available_museum_form
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Доступный музей
+      .available-form-block__subheading.site-block__subheading Присоединяйтесь к индивидуальной программе лояльности «Друзья Третьяковской галереи» и посещайте все выставки музея без очереди и без билета в течение года.
+      .available-form-block__label.form__label
+        span.form__required-msg
+          | Поля отмеченные
+          | <img src="images/icons/exclamation.svg" class="required-msg__icon"></img>
+          | обязательны для заполнения
+      .available-form-block__input-fields.form__input-fields
+        .form__input-container
+          input(name="name" placeholder="Имя" required).form__input
+          .input__label-wrapper
+            label.input__label Имя
+          img(src="images/icons/exclamation.svg").input__required-icon
+        .form__input-container
+          input(name="surname" placeholder="Фамилия" required).form__input
+          .input__label-wrapper
+            label.input__label Фамилия
+          img(src="images/icons/exclamation.svg").input__required-icon
+      .available-form-block__input-fields.form__input-fields
+        .form__input-container
+          input(name="region" placeholder="Регион проживания" required).form__input
+          .input__label-wrapper
+            label.input__label Регион проживания
+          img(src="images/icons/exclamation.svg").input__required-icon
+        .form__input-container
+          input(name="city" placeholder="Город / Населённый пункт" required).form__input
+          .input__label-wrapper
+            label.input__label Город / Населённый пункт
+          img(src="images/icons/exclamation.svg").input__required-icon
+      .available-form-block__input-fields.form__input-fields
+        .form__input-container
+          input(name="phone" placeholder="Телефон" required).form__input#input__phone
+          .input__label-wrapper
+            label.input__label Телефон
+          img(src="images/icons/exclamation.svg").input__required-icon
+        .form__input-container
+          input(name="email" placeholder="Эл. почта" required).form__input
+          .input__label-wrapper
+            label.input__label Эл. почта
+          img(src="images/icons/exclamation.svg").input__required-icon
+      .available-form-block__footer.form__footer
+        .form__personal_agreement
+          input(type="checkbox" name="agreement" required).checkbox#agreement
+          label(for="agreement") Даю согласие на обработку&nbsp<a href="#" class="form__personal_agreement__link">персональных данных</a>
+        button(type="submit").available-form-block__btn.btn Зарегистрироваться
+  
+block content
+  +exhibition-block
+  +address-time-block
+  +details-block
+  +available-form-block
+
+block footer
+  +footer
+  script(src="https://unpkg.com/imask")
+  script.
+    var phoneMask = IMask(
+    document.getElementById('input__phone'), {
+      mask: '+{7} (000) 000-00-00'
+    });

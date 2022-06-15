@@ -1,0 +1,137 @@
+//- out: ../school.html, pretty: true
+extend _base_template
+
+include _mixins
+       
+mixin literatury-item(image, author, name)
+  a(href="#" download).download-card.library-block__download-card
+    .download-card__image-wrapper.library-block__image-wrapper
+      img(src=image).download-card__image
+    .library-block__content-wrapper
+      .literatury-block__author=author
+      .download-card__heading=name
+      .library-block__download-card__download.download-card__download.site-block__arrow-link.arrow-link Скачать PDF • 0.78 Мб
+        img(src="images/icons/download.svg")
+
+mixin page-header()
+  +breadcrumbs("school__breadcrumbs", "", "Школа", "", ["index.html", "Главная"], ["О Партии"])
+  
+mixin school-intro-block()
+  .school-intro-block.adaptive-padding
+    p.intro_block__p В представленных видеоматериалах системно, доступно, наглядно и в то же время на высоком теоретическом уровне раскрывается сущность капитализма, империализма и социализма. 
+    p.intro_block__p Курс рассчитан на год, по одному - два занятия в неделю как для индивидуального, так и для группового обучения. Желательно соблюдать последовательность занятий. Система предусматривает обратную связь и возможность проведения вебинаров.
+
+mixin video-card-slide(video_img, count, total, heading, desc)
+  .video-card-item__wrapper
+    .video-card-item
+      a(href="#").video-card-item__image-wrapper.hover-video
+        img(src=video_img).hover-video__img.video-card-item__image
+      .video-card-item__footer
+        .video-card-item__count=count
+          span.video-card-item__total  / !{total}
+        .video-card-item__content
+          .video-card-item__heading=heading
+          .video-card-item__desc=desc
+
+mixin dark-video-card-slide(video_img, count, total, heading, desc)
+  .video-card-item__wrapper
+    .video-card-item
+      a(href="#").video-card-item__image-wrapper.hover-video
+        img(src=video_img).hover-video__img.video-card-item__image
+      .video-card-item__footer
+        .dark-block__video-card-item__count.video-card-item__count=count
+          span.dark-block__video-card-item__total.video-card-item__total  / !{total}
+        .video-card-item__content
+          .dark-block__video-card-item__heading.video-card-item__heading=heading
+          .dark-block__video-card-item__desc.video-card-item__desc=desc
+          
+mixin school-videos-slider(slider_id, dark=false)
+  .school-videos-slider__wrapper.slider-wrapper
+    .school-videos-slider__nav(id=slider_id+"__nav")
+      .school-videos-slider__nav__prev.slider__nav__prev.nav__prev-button.nav__btn
+        img(src="images/icons/arrow_hover.svg").nav__btn__img.nav__btn__img-rotate
+      .school-videos-slider__nav__next.slider__nav__next.nav__next-button.nav__btn
+        img(src="images/icons/arrow_hover.svg").nav__btn__img
+    .school-videos-slider(id=slider_id)
+      if (!dark)
+        +video-card-slide("images/media7.jpg", "1", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +video-card-slide("images/media1.jpg", "2", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +video-card-slide("images/media9.jpg", "3", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +video-card-slide("images/media10.png", "4", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +video-card-slide("images/media1.png", "5", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +video-card-slide("images/media2.png", "6", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        .video-card-item__wrapper__empty ...
+      else
+        +dark-video-card-slide("images/media7.jpg", "1", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +dark-video-card-slide("images/media1.jpg", "2", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +dark-video-card-slide("images/media9.jpg", "3", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +dark-video-card-slide("images/media10.png", "4", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +dark-video-card-slide("images/media1.png", "5", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        +dark-video-card-slide("images/media2.png", "6", "6", "Кругооборот промышленного капитала", "Герой Советского Союза, генерал-полковник В. М. Шатилов рассказывает о ратных подвигах воинов 150-й стрелковой дивизии, прошедшей с боями до Берлина")
+        .dark-block__video-card-item__wrapper__empty.video-card-item__wrapper__empty ...
+        
+mixin intrant-block()
+  .school-block.dark-block
+    .site-block__container
+      .site-block__heading.dark-block__heading Вступающему в партию
+      +school-videos-slider("school-videos-slider-1", true)
+      
+mixin capitalism-block()
+  .school-block
+    .site-block__container
+      .site-block__heading Капитализм
+      +school-videos-slider("school-videos-slider-2")
+      
+mixin socialism-block()
+  .school-block.dark-block
+    .site-block__container
+      .site-block__heading.dark-block__heading Социализм
+      +school-videos-slider("school-videos-slider-3", true)
+      
+mixin imperialism-block()
+  .school-block
+    .site-block__container
+      .site-block__heading Империализм
+      +school-videos-slider("school-videos-slider-4")
+
+mixin socialism-fate-block()
+  .school-block.dark-block
+    .site-block__container
+      .site-block__heading.dark-block__heading Судьба социализма в СССР
+      +school-videos-slider("school-videos-slider-5", true)
+      
+mixin literatury-block()
+  .literatury-block
+    .site-block__container.container.adaptive-padding
+      .literatury-block__heading.site-block__heading Литература
+      .literatury-block__download-cards.library-block__download-cards.download-cards
+        +literatury-item("images/books/cover-2.png", "Максим Горький", "Учитесь мыслить смолоду")
+        +literatury-item("images/books/cover-1.png", "Фёдор Гладков", "Империализм грозит всему человечеству")
+        +literatury-item("images/books/cover-3.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-4.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-5.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-6.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-7.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-8.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-9.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-10.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-11.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-12.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-13.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-14.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-15.png", "Леонид Леонов", "Учебник логики")
+        +literatury-item("images/books/cover-7.png", "Леонид Леонов", "Учебник логики")
+
+block content
+  +page-header
+  +school-intro-block
+  +intrant-block
+  +capitalism-block
+  +socialism-block
+  +imperialism-block
+  +socialism-fate-block
+  +literatury-block
+    
+      
+          
+        

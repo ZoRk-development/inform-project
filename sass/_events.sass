@@ -1,0 +1,61 @@
+.events-block__breadcrumbs
+  padding-top: 64px
+  padding-bottom: 64px
+  @media screen and (max-width: $sm)
+    padding-top: 48px
+    padding-bottom: 48px
+
+.events-block
+  margin-bottom: 112px
+
+.events-block__btn
+  padding-top: 12px
+  padding-bottom: 12px
+
+.events-block__events
+  margin: 0 0 48px 0
+  padding: 0 0 16px 0
+  border: none
+  border-top: 1px solid $gray-1
+  border-bottom: 1px solid $gray-1
+  @media screen and (max-width: $lg)
+    padding: 0 0 32px 0
+  @media screen and (max-width: $sm)
+    border-top: none
+    padding: 0 0 8px 0
+
+// grid border
+.events-block__events > :nth-child(n)
+  padding-top: 64px
+  padding-bottom: 64px
+  @media screen and (max-width: $lg)
+    padding-top: 48px
+    padding-bottom: 48px
+  @media screen and (max-width: $sm)
+    padding-top: 24px
+    padding-bottom: 24px
+  &> :nth-child(n)
+    padding-left: calc(64px / (1216px / 3) * 100%)
+    padding-right: calc(64px / (1216px / 3) * 100%)
+    @media screen and (max-width: $lg)
+      padding-left: calc(48px / (1216px / 3) * 100%)
+      padding-right: calc(48px / (1216px / 3) * 100%)
+    @media screen and (max-width: $sm)
+      padding-left: calc(24px / (1216px / 3) * 100%)
+      padding-right: calc(24px / (1216px / 3) * 100%)
+
+@media screen and (min-width: $lg + 1)
+  .events-block__events > :nth-child(n + 4)
+    border-top: 1px solid $gray-1
+  .events-block__events > :not(:nth-child(3n + 1)) > :nth-child(n)
+    border-left: 1px solid $gray-1
+@media screen and (max-width: $lg) and (min-width: $sm + 1)
+  .events-block__events > :nth-child(n + 3)
+    border-top: 1px solid $gray-1
+  .events-block__events > :not(:nth-child(2n + 1)) > :nth-child(n)
+    border-left: 1px solid $gray-1
+@media screen and (max-width: $sm)
+  .events-block__events > :nth-child(1)
+    padding-top: 0px
+  .events-block__events > :nth-child(n + 2)
+    border-top: 1px solid $gray-1

@@ -1,0 +1,46 @@
+//- out: ../volunteer.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("volunteer__breadcrumbs", "", "Сообщество волонтеров", "", ["index.html", "Главная"], ["Контакты"], ["Стать сторонником"])
+
+mixin volunteer-block()
+  .volunteer-block
+    .volunteer-block__container.site-block__container.container.adaptive-padding
+      p.volunteer-block__p Если вы хотите на один год попасть в команду Третьяковской галереи — присоединяйтесь к нашему сообществу волонтеров!
+      p.volunteer-block__p-strong Вы узнаете, как работает большой музей изнутри, познакомитесь с единомышленниками и примете участие в крупных музейных проектах - выставках, культурно-просветительских мероприятиях, научной работе.
+      p.volunteer-block__p Волонтеры Третьяковки работают с посетителями музея (помощь на выставках, крупных событиях и образовательных программах) и научными сотрудниками Галереи (расшифровка аудио материалов и архивных документов, переводы, сбор материалов в библиотеках).  Есть проекты, которые подразумевают участие в рабочие часы будних дней, есть мероприятия, помощь на которых требуется по вечерам и в выходные, частично некоторые задания можно выполнять дистанционно. 
+
+mixin volunteer-form-block()
+  .volunteer-form-block
+    form.site-block__container.container.adaptive-padding
+      .site-block__heading Форма стать волонтёром
+      .volunteer-form-block__subheading.site-block__subheading Вы можете присоединиться к волонтерскому сообществу, отправив заявку
+      .volunteer-form-block__label.form__label
+        span.form__required-msg
+          | Поля отмеченные
+          | <img src="images/icons/exclamation.svg" class="required-msg__icon"></img>
+          | обязательны для заполнения
+      .volunteer-form-block__input-fields.form__input-fields
+        .form__input-container
+          input(name="name" placeholder="Имя" required).form__input
+          .input__label-wrapper
+            .input__label Имя
+          img(src="images/icons/exclamation.svg").input__required-icon
+        .form__input-container
+          input(name="surname" placeholder="Фамилия" required).form__input
+          .input__label-wrapper
+            .input__label Фамилия
+          img(src="images/icons/exclamation.svg").input__required-icon
+      .form__footer
+        .form__personal_agreement
+          input(type="checkbox" name="agreement" required).checkbox#agreement
+          label(for="agreement") Даю согласие на обработку&nbsp<a href="#" class="form__personal_agreement__link">персональных данных</a>
+        button(type="submit").btn Вступить в КПРФ
+  
+block content
+  +page-header
+  +volunteer-block
+  +volunteer-form-block

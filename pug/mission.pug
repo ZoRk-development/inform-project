@@ -1,0 +1,111 @@
+//- out: ../mission.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("mission__breadcrumbs", "", "Преподавателям", "", ["index.html", "Главная"], ["О Партии"])
+  
+mixin values-block()
+  .values-block
+    .site-block__container.container.adaptive-padding
+      .values-block__heading.site-block__heading Перед Третьяковской галереей стоят три основные цели
+      .article-list
+        .article-item
+          .article-item__name Наши ценности
+          .article-item__desc
+            p.article-item__p формировать российскую культурную идентичность, привлекая внимание общества к той важной роли, которую играют в ней искусство в целом и наша коллекция в частности. Продолжать дело П.М. Третьякова, знакомя жителей страны с отечественным художественным наследием
+          a(href="#").article-item__arrow-link.site-block__arrow-link.arrow-link Читать подробно
+            img(src="images/icons/default-arrow.svg").arrow_icon
+        .article-item
+          .article-item__name Наши ценности
+          .article-item__desc
+            p.article-item__p формировать российскую культурную идентичность, привлекая внимание общества к той важной роли, которую играют в ней искусство в целом и наша коллекция в частности. Продолжать дело П.М. Третьякова, знакомя жителей страны с отечественным художественным наследием
+          a(href="#").article-item__arrow-link.site-block__arrow-link.arrow-link Читать подробно
+            img(src="images/icons/default-arrow.svg").arrow_icon 
+
+mixin author(img, name, desc)
+  .author-wrapper
+    .author
+      img(src=img)
+      .author__content
+        .author__name=name
+        .author__desc=desc
+    
+mixin people-block()
+  .people-block
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Люди
+      a(href="#").authors-block__arrow-link.site-block__arrow-link.arrow-link Смотреть все
+        img(src="images/icons/default-arrow.svg").arrow_icon
+      .authors
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+        +author("images/pushkin.png", "Александр Сергеевич Пушкин", "Русский поэт")
+  
+mixin openness-block()
+  .openness-block
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Открытость для сотрудничества
+      a(href="#").openness-block__arrow-link.site-block__arrow-link.arrow-link Смотреть все
+        img(src="images/icons/default-arrow.svg").arrow_icon
+      .article-list
+        .article-item
+          .article-item__name Электронная версия газеты ЦК КПРФ «Правда»
+          .article-item__desc
+            p.article-item__p У вас есть возможность регулярно узнавать ПРАВДУ о том, что будет происходить в жизни трудового народа во всех уголках России и за ее пределами.
+            p.article-item__p В отличие от буржуазной прессы, пишущей о богатых и для богатых, о частной жизни нуворишей, только на страницах нашей газеты вы узнаете, как живется большинству граждан России.
+            p.article-item__p Только у нас вы сможете прочитать статьи и репортажи о новых антинародных действиях российских властей, узнать о том, что предпринимают люди труда в борьбе за свои права.
+            p.article-item__p Подписка на газету принимается во всех отделениях почтовой связи. Индекс в электронном каталоге АО "Почта России" - ПН239.
+          a(href="#").article-item__arrow-link.site-block__arrow-link.arrow-link Перейти на сайт
+            img(src="images/icons/external-link.svg").arrow_icon
+
+mixin document-item(date, name)
+  .document-item
+    .document-item__wrapper
+      .document-item__heading
+        .mission__document-item__date.document-item__date=date
+        .mission__document-item__name.document-item__name=name
+      .mission__document-item__desc.document-item__desc
+        block
+      a(href="#" download).mission__document-item__download.document-item__download.site-block__arrow-link.arrow-link Скачать PDF • 0.78 Мб
+        img(src="images/icons/download.svg")
+          
+mixin documents-block()
+  .mission__documents-block.documents-block
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Официальные документы ЦК КПРФ
+      a(href="#").openness-block__arrow-link.site-block__arrow-link.arrow-link Смотреть все
+        img(src="images/icons/default-arrow.svg").arrow_icon
+      .documents-list
+        +document-item("26 апреля 2022", "Заседание Президиума ЦКРК КПРФ")
+          p В книге говорится о подготовке империалистических стран к ведению бактериологической (биологической) войны. В популярной форме авторы рассказывают о поражающих факторах бактериологического оружия, о микробах и токсинах, о вызываемых ими инфекционных заболеваниях.
+        +document-item("4 апреля 2022", "Совместное заседание Секретариата ЦК КПРФ и фракции КПРФ  в Государственной Думе")
+          p В книге прослеживается путь развития мировой и русской артиллерии, рассказывается о выдающихся достижениях русских конструкторов, создававших грозную боевую технику.
+        +document-item("26 апреля 2022", "Заседание Президиума ЦКРК КПРФ")
+          p В книге говорится о подготовке империалистических стран к ведению бактериологической (биологической) войны. В популярной форме авторы рассказывают о поражающих факторах бактериологического оружия, о микробах и токсинах, о вызываемых ими инфекционных заболеваниях.
+          
+mixin friends-block()
+  .friends-block
+    .site-block__container.container.adaptive-padding
+      .site-block__heading Друзья и союзники партии
+      a(href="#").site-block__arrow-link.arrow-link Смотреть все
+        img(src="images/icons/default-arrow.svg").arrow_icon
+      .article-list
+        .article-item
+          .article-item__name Советская Музыка
+          .article-item__desc
+            p.article-item__p Эти песни — памятник нашего недавнего прошлого, в котором наша страна пыталась построить социалистическое общество. Это было интересное время, время не только ГУЛАГов, но и «Великих строек», энтузиазма, побед и веры в «Светлое будущее всего человечества». И даже несмотря на то, что некоторые песни сегодня способны вызвать лишь улыбку, я убежден что мы не должны отказываться от того, что является частью нашей истории и нашей культуры.
+          a(href="#").article-item__arrow-link.site-block__arrow-link.arrow-link Перейти на сайт
+            img(src="images/icons/external-link.svg").arrow_icon
+  
+block content
+  +page-header
+  +values-block
+  +people-block
+  +openness-block
+  +documents-block
+  +friends-block

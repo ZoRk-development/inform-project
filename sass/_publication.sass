@@ -1,0 +1,223 @@
+.publication__breadcrumbs
+  position: relative
+  padding-top: 96px
+  padding-bottom: 176px
+  color: white
+  margin-bottom: 64px
+  @media screen and (max-width: $md)
+    padding-top: 64px
+    margin-bottom: 56px
+  @media screen and (max-width: $sm)
+    padding-top: 48px
+    padding-bottom: 138px
+    margin-bottom: 48px
+
+.publication__breadcrumbs__title
+  max-width: 800px
+  margin: 0 auto
+  font-size: 4.1rem
+  line-height: 117%
+  @media screen and (max-width: $md)
+    font-size: 2.8rem
+  @media screen and (max-width: $sm)
+    font-size: 2.2rem
+
+.publication__breadcrumbs__item
+  color: $gray-3
+
+.publication__bg-image
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  object-fit: cover
+  background-repeat: no-repeat
+  background-size: cover
+  filter: brightness(30%)
+  z-index: -1
+
+.publication-block
+  max-width: 800px
+  margin: 0 auto
+  color: $gray-8
+  font-family: $serif-font
+  font-weight: 400
+  font-size: 2.0rem
+  line-height: 142%
+  margin-bottom: 112px
+  @media screen and (max-width: $md)
+    margin-bottom: 80px
+    font-size: 1.8rem
+  @media screen and (max-width: $sm)
+    margin-bottom: 64px
+    font-size: 1.6rem
+
+.publication-block p + p
+  margin-top: 32px
+  @media screen and (max-width: $sm)
+    margin-top: 16px
+
+.publication-block__heading
+  color: $gray-9
+  font-weight: 900
+  font-size: 3.5rem
+  line-height: 136%
+  margin-bottom: 32px
+  @media screen and (max-width: $md)
+    font-size: 2.8rem
+  @media screen and (max-width: $sm)
+    font-size: 2.2rem
+
+.strong-block
+  color: $gray-9
+  font-weight: 700
+  font-size: 3.2rem
+  line-height: 125%
+  margin: 64px 0 48px
+  padding-top: 32px
+  &:before
+    display: block
+    content: ""
+    position: relative
+    width: 128px
+    border: 2px solid $gray-9
+    margin-top: -32px
+    margin-bottom: 32px
+  @media screen and (max-width: $md)
+    font-size: 2.2rem
+    margin: 56px 0 32px
+  @media screen and (max-width: $sm)
+    font-size: 1.8rem
+    padding-top: 16px
+    margin: 48px 0 24px
+    &:before
+      margin-top: -16px
+      margin-bottom: 16px
+
+.video-insert
+  margin: 72px 0 48px
+  padding-bottom: 16px
+  border-bottom: 1px solid $gray-3
+  width: 100%
+  @media screen and (max-width: $md)
+    margin: 64px 0 40px
+  @media screen and (max-width: $sm)
+    margin: 56px 0 24px
+
+.video-insert__caption
+  font-family: $sans-serif-font
+  color: $gray-8
+  font-weight: 400
+  font-size: 1.6rem
+  line-height: 150%
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+  @media screen and (max-width: $sm)
+    font-size: 1.3rem
+
+.video-insert__video
+    width: 100%
+    height: auto
+
+.slider-insert
+  margin: 36px 0 24px
+  padding-bottom: 16px
+  border-bottom: 1px solid $gray-3
+  @media screen and (max-width: $md)
+    margin-top: 24px
+  @media screen and (max-width: $sm)
+    margin-bottom: 16px
+
+.slider-insert
+  .tns-slide-active, .tns-item
+    opacity: 1
+    transition: opacity 0.3s
+  .tns-slide-active ~ .tns-slide-active
+    opacity: 0.5
+    transition: opacity 0.3s
+  .tns-slide-active ~ .tns-slide-active ~ .tns-slide-active
+    opacity: 0.2
+    transition: opacity 0.3s
+    &:hover
+      opacity: 1
+  .tns-item:hover
+    opacity: 1
+
+.slider-insert__image-slider
+  margin-bottom: 16px
+  @media screen and (max-width: $sm)
+    margin-bottom: 12px
+
+.image-slider__card
+  position: relative
+  height: 192px
+  width: 256px
+  &:hover
+    .tns-item
+      opacity: 1
+
+.image-slider__img
+  object-fit: cover
+  object-position: 50% 50%
+  height: 100%
+  width: 100%
+
+.image-slider__number
+  font-family: $serif-font
+  position: absolute
+  bottom: 8px
+  left: 8px
+  background-color: $gray-9
+  border-radius: 4px
+  padding: 5px 10px
+  color: $gray-3
+  font-size: 1.6rem
+  line-height: 135%
+  @media screen and (max-width: $sm)
+    font-size: 1.2rem
+    line-height: 100%
+
+.slider-insert__caption
+  font-family: $sans-serif-font
+  color: $gray-8
+  font-weight: 400
+  font-size: 16px
+  line-height: 150%
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 145%
+  @media screen and (max-width: $sm)
+    font-size: 1.3rem
+    line-height: 135%
+
+.image-insert
+  margin: 40px 0 32px
+  padding-bottom: 16px
+  border-bottom: 1px solid $gray-3
+  width: 100%
+  @media screen and (max-width: $md)
+    margin: 32px 0 32px
+  @media screen and (max-width: $sm)
+    margin: 24px 0 28px
+
+.image-insert__image
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: 50% 50%
+  margin-bottom: 16px
+  @media screen and (max-width: $sm)
+    margin-bottom: 12px
+
+.image-insert__caption
+  font-family: $sans-serif-font
+  color: $gray-8
+  font-weight: 400
+  font-size: 1.6rem
+  line-height: 150%
+  @media screen and (max-width: $md)
+    font-size: 1.4rem
+    line-height: 145%

@@ -1,0 +1,65 @@
+//- out: ../multimedia.html, pretty: true
+extend _base_template
+
+include _mixins
+
+mixin page-header()
+  +breadcrumbs("multimedia__breadcrumbs", "", "Мультимедиа", "", ["index.html", "Главная"], ["Новости"], ["Мультимедиа"])
+    
+mixin multimedia-item(img, date, heading)
+  .multimedia-item
+    a(href="#")
+      img(src=img).multimedia-item__image
+      img(src="images/icons/icon-play.svg").multimedia-item__image-play
+    .multimedia-item__heading=heading
+    .multimedia-item__date=date
+
+mixin multimedia-top-block()
+  .multimedia-top-block
+    .site-block__container.container.adaptive-padding
+      .multimedia-items-grid
+        +multimedia-item("images/media1.jpg", "26 апреля 2022", "«Пятёрочка» протестирует создание в своих магазинах «Центров местного сообщества» ")
+        +multimedia-item("images/media2.jpg", "22 апреля 2022", "Памяти настоящего коммуниста Николая Михайловича Беляева")
+        +multimedia-item("images/media3.jpg", "15 апреля 2022", "22 июня 1940 г. было подписано перемирие с Францией")
+        +multimedia-item("images/media4.jpg", "10 апреля 2022", "Битва за Англию")
+        +multimedia-item("images/media1.jpg", "6 апреля 2022", "Ирина Иванова: Наш город - прежде всего, наследник великого прошлого!")
+
+mixin best-videos-block()
+  .best-videos-block.dark-block
+    .site-block__container
+      .best-videos-block__heading.site-block__heading.dark-block__heading Лучшие видео материалы
+      .videos-slider__wrapper.slider-wrapper
+        .videos-slider__nav#videos-slider__nav
+          .videos-slider__nav__prev.slider__nav__prev.nav__prev-button.nav__btn
+            img(src="images/icons/arrow_hover.svg").nav__btn__img.nav__btn__img-rotate
+          .videos-slider__nav__next.slider__nav__next.nav__next-button.nav__btn
+            img(src="images/icons/arrow_hover.svg").nav__btn__img
+        .videos-slider#videos-slider
+          +videos-slide("images/media1.png", "Выставка «Скульптура Флоренции в ХV веке»", "Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту")
+          +videos-slide("images/media2.png", "День рождения Владимира Ленина", "Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту")
+          +videos-slide("images/media1.png", "Выставка «Скульптура Флоренции в ХV веке»", "Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту")
+          +videos-slide("images/media2.png", "День рождения Владимира Ленина", "Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту")
+          +videos-slide("images/media1.png", "Выставка «Скульптура Флоренции в ХV веке»", "Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту")
+          +videos-slide("images/media2.png", "День рождения Владимира Ленина", "Пискаревское мемориальное кладбище и Шествие колонны коммунистов по Невскому проспекту")
+
+mixin rest-multimedia-block()
+  .rest-multimedia-block
+    .site-block__container.container.adaptive-padding
+      .rest-multimedia-block__multimedia-items.multimedia-items-grid
+        +multimedia-item("images/media2.jpg", "2 апреля 2022", "Геннадий Денисов: Власть переписывает закон под каждые выборы, но каждый раз он массово нарушается!")
+        +multimedia-item("images/media3.jpg", "26 марта 2022", "Ольга Ходунова: Сделайте свой выбор во имя будущего ваших детей!")
+        +multimedia-item("images/media4.jpg", "26 апреля 2022", "Роман Кононенко: Власть должна проявить политическую волю и не дать задушить местных производителей!")
+        +multimedia-item("images/media1.jpg", "22 апреля 2022", "Фракция КПРФ единогласно не поддержала корректировку бюджета города")
+        +multimedia-item("images/media2.jpg", "26 апреля 2022", "«Пятёрочка» протестирует создание в своих магазинах «Центров местного сообщества» ")
+        +multimedia-item("images/media3.jpg", "21 апреля 2022", "Горожане поддерживают инициативу о возвращении городу имени Ленина")
+        +multimedia-item("images/media4.jpg", "15 апреля 2022", "Власть двадцать лет разрушала советскую систему подготовки кадров, а сейчас пытается о ней вспоминать")
+        +multimedia-item("images/media1.jpg", "10 апреля 2022", "Памяти И.В. Сталина. Песня русского барда Александра Харчикова в исполнении ленинградской пионерки")
+        +multimedia-item("images/media2.jpg", "6 апреля 2022", "Советский народ в тяжелейшую годину испытаний проявил максимальные мужество и героизм")
+       
+      +pagination()
+
+block content
+  +page-header
+  +multimedia-top-block
+  +best-videos-block
+  +rest-multimedia-block

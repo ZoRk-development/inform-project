@@ -1,0 +1,154 @@
+$multimedia-item__image-play-top: 120px
+$multimedia-item__image-height: 240px
+@media screen and (max-width: $lg)
+  $multimedia-item__image-height: 190px
+
+.multimedia__breadcrumbs
+  padding-top: 64px
+  padding-bottom: 96px
+  @media screen and (max-width: $sm)
+    padding-top: 48px
+    padding-bottom: 48px
+
+.rest-multimedia-block__multimedia-items
+  margin-bottom: 48px
+  padding-bottom: 80px
+  border-bottom: 1px solid $gray-3
+
+.rest-multimedia-block
+  margin-bottom: 164px
+  @media screen and (max-width: $md)
+    margin-bottom: 96px
+    
+.multimedia-top-block
+  margin-bottom: 80px
+  padding: 0
+  @media screen and (max-width: $md)
+    margin-bottom: 72px
+  @media screen and (max-width: $sm)
+    margin-bottom: 56px
+
+.multimedia-items-big
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 64px
+  grid-row-gap: 80px
+
+.multimedia-items-grid
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  grid-column-gap: 64px
+  grid-row-gap: 80px
+  @media screen and (max-width: $lg)
+    grid-template-columns: repeat(2, 1fr)
+    grid-column-gap: 48px
+    grid-row-gap: 56px
+  @media screen and (max-width: $sm)
+    grid-template-columns: 1fr
+    grid-row-gap: 32px
+
+
+.multimedia-item
+  display: flex
+  flex-flow: column
+  text-decoration: none
+  position: relative
+  grid-column: span 2
+  @media screen and (max-width: $lg)
+    grid-column: span 1
+  &:hover
+    .multimedia-item__image
+      filter: brightness(40%)
+      transition: filter 0.7s
+    .multimedia-item__image-play
+      opacity: 1
+      transition: opacity 0.7s
+
+.multimedia-item__image-big
+  height: 368px
+
+.multimedia-item__image-big-play
+  top: 184px
+
+@media screen and (min-width: $lg)
+  .multimedia-items-grid .multimedia-item:nth-child(1), .multimedia-items-grid .multimedia-item:nth-child(2)
+    grid-column: span 3
+    .multimedia-item__image
+      height: 368px
+    .multimedia-item__image-play
+      top: 184px
+
+@media screen and (max-width: $lg) and (min-width: $sm)
+  .multimedia-items-grid .multimedia-item:nth-child(1)
+    grid-column: span 2
+    .multimedia-item__image
+      height: 368px
+    .multimedia-item__image-play
+      top: 184px
+
+.rest-multimedia-block__multimedia-items .multimedia-item:nth-child(n)
+  grid-column: span 2
+  @media screen and (max-width: $lg)
+    grid-column: span 1
+  .multimedia-item__image
+    height: $multimedia-item__image-height
+  .multimedia-item__image-play
+    top: $multimedia-item__image-play-top
+
+@media screen and (max-width: $lg) and (min-width: $sm)
+  .rest-multimedia-block__multimedia-items .multimedia-item:nth-child(1)
+    grid-column: span 2
+    .multimedia-item__image
+      height: 368px
+    .multimedia-item__image-play
+      top: 184px
+
+.multimedia-item__image-play
+  opacity: 0
+  position: absolute
+  width: 24px
+  height: 24px
+  left: 50%
+  top: $multimedia-item__image-play-top
+  transition: opacity 0.7s
+
+.multimedia-item__image
+  width: 100%
+  height: $multimedia-item__image-height
+  object-fit: cover
+  margin-bottom: 32px
+  transition: filter 0.7s
+
+.multimedia-item__date
+  color: $indigo-7
+  font-weight: 700
+  font-size: 12px
+  line-height: 135%
+  letter-spacing: 0.07em
+  text-transform: uppercase
+  margin-bottom: 8px
+
+.multimedia-item__heading
+  color: $gray-9
+  font-weight: 700
+  font-size: 20px
+  line-height: 120%
+  margin-bottom: 16px
+
+.best-videos-block
+  padding-top: 80px
+  padding-bottom: 112px
+  margin-bottom: 80px
+  @media screen and (max-width: $md)
+    padding-top: 56px
+    padding-bottom: 80px
+    margin-bottom: 64px
+  @media screen and (max-width: $sm)
+    padding-bottom: 56px
+
+.best-videos-block__heading
+  margin-bottom: 64px
+  @media screen and (max-width: $md)
+    margin-bottom: 56px
+  @media screen and (max-width: $sm)
+    margin-bottom: 32px
